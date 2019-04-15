@@ -28,20 +28,23 @@ Option 1. Weights(.h5)와 Model Architecture (.json)으로 저장 및 불러오�
 Option 2. Model 전체 (.h5)를 저장 및 불러오기
 할 수 있다.
 
-- Option 1: Weights and Model Architecture <br>
+- Option 1: Weights and Model Architecture
   > 저장하기
 
-```python
-# Save the weights
-model.save_weights('model_weights.h5')
+>
 
-# Save the model architecture
-with open('model_architecture.json', 'w') as f:
-    f.write(model.to_json())
-```
+> ```python
+> # Save the weights
+> model.save_weights('model_weights.h5')
+>
+> # Save the model architecture
+>
+> with open('model_architecture.json', 'w') as f:
+> f.write(model.to_json())
+>
+> ```
 
-<br>
- > 불러오기
+> > 불러오기
 
 ```python
 from keras.models import model_from_json
