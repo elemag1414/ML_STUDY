@@ -64,4 +64,32 @@ model = load_model('my_model.h5')
 4. State of the optimizer (allows you to resume the trainig from exactly where you left off) <br>
    주: pickle 혹은 cPickle을 사용하여 keras model을 저장하는 방법은 권장하지 않는다. <br><br>
 
+### Model Compile & Evaluation [출처](https://3months.tistory.com/150)
+
+Model 불러오기를 통해 Keras Model이 준비 되었다면, compile 후 evaluation 과정을 추가 할 수 있다.
+
+예제를 위해 입력 데이터 세트 X와 ground truth Y가 있다고 가정하면 다음을 통해 성능 평가를 할 수 있다.
+
+> Model Compile
+
+```python
+model.compile(loss="binary_crossentropy", optimizer="rmsprop", metrics=['accuracy'])
+```
+
+> Model Evaluation
+
+```python
+score = model.evaluate(X,Y,verbose=0)
+```
+
+> Print Results
+
+```python
+print("{} : {:%.2f}".format(model.metrics_names[1], score[1]*100))
+```
+
+#### Additional Resources:
+
+- [h5py: Python에서 HDF5 파일 읽고 쓰기](https://www.christopherlovell.co.uk/blog/2016/04/27/h5py-intro.html)
+
 ##### [[Keras로 돌아기기]](https://github.com/elemag1414/Keras)|[[ML_STUDY로 돌아기기]](https://github.com/elemag1414/ML_STUDY)
