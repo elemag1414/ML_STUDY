@@ -40,7 +40,8 @@ with open('model_architecture.json', 'w') as f:
     f.write(model.to_json())
 ```
 
-> 불러오기
+<br>
+ > 불러오기
 
 ```python
 from keras.models import model_from_json
@@ -53,8 +54,8 @@ with open('model_architecture.json', 'r') as f:
 model.load_weights('model_weights.h5')
 ```
 
-> Option 2: Entire Model <br>
-> 다음은 ML Model 전체를 하나의 h5파일로 저장하고 다시 불러오는 snippet이다.
+- Option 2: Entire Model <br>
+  > 다음은 ML Model 전체를 하나의 h5파일로 저장하고 다시 불러오는 snippet이다.
 
 ```python
 from keras.models import load_model
