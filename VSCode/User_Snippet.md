@@ -49,4 +49,4 @@
 }
 ```
 
-##### [VSCode로 돌아가기](https://github.com/elemag1414/ML_STUDY/tree/master/VSCode)|[ML_STUDY로 돌아기기](https://github.com/elemag1414/ML_STUDY)
+##### [[VSCode로 돌아가기]](https://github.com/elemag1414/ML_STUDY/tree/master/VSCode)|[[ML_STUDY로 돌아기기]](https://github.com/elemag1414/ML_STUDY)
