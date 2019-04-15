@@ -31,7 +31,8 @@ Option 2. Model 전체 (.h5)를 저장 및 불러오기 <br>
 할 수 있다. <br>
 
 - Option 1: Weights and Model Architecture
-  > 저장하기 <br>
+
+> 저장하기 <br>
 
 ```python
 # Save the weights
@@ -43,7 +44,7 @@ f.write(model.to_json())
 
 > > 불러오기
 
-```python
+````python
 from keras.models import model_from_json
 
 # Model reconstruction from JSON file
@@ -52,7 +53,7 @@ with open('model_architecture.json', 'r') as f:
 
 # Load weights into the new model
 model.load_weights('model_weights.h5')
-```
+``` <br>
 
 - Option 2: Entire Model <br>
   > 다음은 ML Model 전체를 하나의 h5파일로 저장하고 다시 불러오는 snippet이다.
@@ -68,7 +69,7 @@ del model
 
 # Returns a compiled model identical to the previous one
 model = load_model('my_model.h5')
-```
+````
 
 하나의 hdf5 파일은 다음을 포함한다:
 
