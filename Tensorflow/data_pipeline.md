@@ -1,19 +1,22 @@
 # Input Data Pipeline 만들기
 
 [출처](https://medium.com/trackin-datalabs/input-data-tf-data-%EC%9C%BC%EB%A1%9C-batch-%EB%A7%8C%EB%93%A4%EA%B8%B0-1c96f17c3696)
-데이터를 tfrecord로 변환하고서 그 파일을 학습 데이터로 넣으려고 할 때 enqueue dequeue를 이용하면 코드도 복잡하고, 여러가지 불편함들을 여간 많았던 것이 아니다.
+
+기존에 pipeline 생성을 위해 사용하던 방법인 데이터를 tfrecord로 변환하고서 그 파일을 학습 데이터로 넣으려고 할 때 enqueue dequeue를 이용하면 코드도 복잡하고, 여러가지 불편함들을 많았다.
 
 tf.data를 이용하면 편리하게 tfrecord를 열 수 있는 것 뿐만이 아니라 일반 이미지도 역시 손쉽게 배치로 생성하고 넣을 수 있다.
 
 ## tf.data로 데이터 만들기
 
-일반적인 data 생성 순서는 다음과 같다:
+일반적인 input data 생성 순서는 다음과 같다:
 
 1. 데이터의 경로를 찾는다.
 2. 데이터의 목록들을 가져오고, 이미지와 레이블을 생성한다.
 3. 목록의 한 열 마다 데이터를 여는 방법을 정의한다.
 4. shuffle을 포함한 다양한 옵션을 설정한다.
 5. 배치로 만들어서 model에 feed-in할 준비를 한다.
+
+<br>
 
 ### 1. 데이터 준비 (경로 설정 및 이미지/레이블 생성)
 
@@ -35,8 +38,8 @@ dataset = tf.data.Dataset.from_tensor_slices((image_list, label_list))
 
 ### 2. 데이터 입력 방식 정의
 
-tfrecords가 아닌 numpy 나 image를 읽어야 한다면 다음과 같이
-reader 및 preprocess 함수를 정의하여 사용한다.
+tfrecords가 아닌 numpy 형태나 기타의 방식(예를 들어 OpenCV로 이미지 입력받는 경우)으로
+image를 읽어야 한다면 다음과 같이 preprocess 단계를 거쳐야 한다.
 
 ```python
 def _read_py_function(path, label):
@@ -49,8 +52,8 @@ def _resize_function(image_decoded, label):
     return image_resized, label
 ```
 
-PIL의 Image로 데이터를 불러오든 openCV로 불러오든, 이미지를 읽을 reader 함수를 정의해야 한다.  
-여기에 preprocess 들을 동시에 함께 정의할 수도 있다.
+실제로 tfRecord 포맷으로 변환을 거치지 않고, PIL의 Image로 데이터를 읽어오거나 openCV로 불러오는 경우가 많다.
+이럴때 앞서 preprocess 단계에서 정의한 함수를 사용하여 reader 함수를 정의 한다.
 
 ```python
 dataset = dataset.map(
@@ -60,6 +63,8 @@ dataset = dataset.map(_resize_function)
 
 > 참고로, tensorflow api documentation에서는 코드 성능의 최적화를 위해 가능하면 tf.py_func()을 자제하도록 권한다.
 > tf.py_func()는 tensorflow operation 도중에 python의 library를 사용하기 위해 쓰인다.
+> 위에서 언급한 바와같이, 이 방법은 tfRecord가 아닌 다른 방식으로 image를 읽을 때 사용되는 방식으로,
+> tfRecord로 변환하여 training등을 수행할때는 이 단계를 skip한다.
 
 ### 3. 데이터 입력 옵션 정의
 
