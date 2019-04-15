@@ -13,9 +13,9 @@ save_path = saver.save(sess, "/path/to_ckpt/model.ckpt")
 
 > [출처: Stack overflow](https://github.com/keras-team/keras/issues/9040)
 
-- Convert
+### \* Convert
 
-### ML Model
+### \* ML Model
 
 ML Model은 대부분 Architecture와 Weights로 구성되며,
 각 라이브러리마다 취급하는 방식이 약간씩 다르다. <br>
@@ -29,9 +29,8 @@ Option 2. Model 전체 (.h5)를 저장 및 불러오기 <br>
 할 수 있다. <br> <br>
 
 - Option 1: Weights and Model Architecture
-  > 저장하기
+  > 저장하기 <br>
 
-<div>
 ```python
 # Save the weights
 model.save_weights('model_weights.h5')
@@ -39,7 +38,6 @@ model.save_weights('model_weights.h5')
 with open('model_architecture.json', 'w') as f:
 f.write(model.to_json())
 ```
-</div>
 
 > > 불러오기
 
