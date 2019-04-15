@@ -2,10 +2,10 @@
 
 ## ML Study
 
-### Tensorflow
+### [Tensorflow](https://github.com/elemag1414/ML_STUDY/blob/master/Tensorflow/README.md)
 
-### Keras
+### [Keras](https://github.com/elemag1414/ML_STUDY/blob/master/Keras/README.md)
 
-## Python
+## [Python](https://github.com/elemag1414/ML_STUDY/blob/master/Python/README.md)
 
 ## [VSCode](https://github.com/elemag1414/ML_STUDY/blob/master/VSCode/README.md)
