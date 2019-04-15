@@ -64,7 +64,7 @@ model = load_model('my_model.h5')
 4. State of the optimizer (allows you to resume the trainig from exactly where you left off) <br>
    주: pickle 혹은 cPickle을 사용하여 keras model을 저장하는 방법은 권장하지 않는다. <br><br>
 
-### Model Compile & Evaluation [출처](https://3months.tistory.com/150)
+### Model Compile & Evaluation [[출처]](https://3months.tistory.com/150)
 
 Model 불러오기를 통해 Keras Model이 준비 되었다면, compile 후 evaluation 과정을 추가 할 수 있다.
 
