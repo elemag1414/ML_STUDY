@@ -2,9 +2,7 @@
 
 ML Model은 대부분 Architecture와 Weights로 구성되며,
 각 라이브러리마다 취급하는 방식이 약간씩 다르다. <br>
-다음은 Keras에서 ML Model을 저장하고 불러오는 방법을 간략히 설명한다. <br>
-
-- [[출처]](https://jovianlin.io/saving-loading-keras-models/)
+다음은 Keras에서 ML Model을 저장하고 불러오는 방법을 간략히 설명한다. [[출처]](https://jovianlin.io/saving-loading-keras-models/)
 
 ## Keras ML Model
 
@@ -40,7 +38,7 @@ model.load_weights('model_weights.h5')
 ```
 
 <br>
-- <b>[Option 2]</b> Entire Model
+### <b>[Option 2]</b> Entire Model
 
 > 다음은 ML Model 전체를 하나의 h5파일로 저장하고 다시 불러오는 snippet이다.
 
