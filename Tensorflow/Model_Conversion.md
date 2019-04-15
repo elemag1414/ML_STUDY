@@ -11,17 +11,19 @@ sess = keras.backend.get_session()
 save_path = saver.save(sess, "/path/to_ckpt/model.ckpt")
 ```
 
-> [출처: Stack overflow](https://github.com/keras-team/keras/issues/9040) <br>
+> [출처: Stack overflow](https://github.com/keras-team/keras/issues/9040) <br><br>
 
 ## Convert Tensorflow model to Keras model
 
-### \* ML Model
+To be added <br><br>
+
+## \* ML Model
 
 ML Model은 대부분 Architecture와 Weights로 구성되며,
 각 라이브러리마다 취급하는 방식이 약간씩 다르다. <br>
 다음은 Tensorflow와 Keras에서 ML Model 취급 방식을 간략히 설명한다. <br>
 
-#### Keras Model [[출처]](https://jovianlin.io/saving-loading-keras-models/)
+### Keras Model [[출처]](https://jovianlin.io/saving-loading-keras-models/)
 
 Keras는 ML 모델을 <br>
 Option 1. Weights(.h5)와 Model Architecture (.json)으로 저장 및 불러오기 <br>
@@ -76,7 +78,7 @@ model = load_model('my_model.h5')
 4. State of the optimizer (allows you to resume the trainig from exactly where you left off)
    주: pickle 혹은 cPickle을 사용하여 keras model을 저장하는 방법은 권장하지 않는다. <br><br>
 
-#### Tensorflow Model
+### Tensorflow Model
 
 Tensorflow는 ML 모델을 저장/불러오기 하는 방식으로 checkpoint를 사용하거나 pd를 사용 할 수 있다.
 
