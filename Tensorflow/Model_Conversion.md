@@ -52,15 +52,12 @@ def freeze_session(session, keep_var_names=None, output_names=None, clear_device
 
 여기서,
 
-freeze_session()의
-
-session: TF session object
-
-keep_var_names: 일부 varable이 frozen (예를 들어 stateful 모델)되지 않기를 원한다면 True설정.
-
-output_names: output으로 생성되기를 바라는 operation의 이름들을 element로 갖는 list.
-
-clear_devices: graph를 좀 더 portable하게 생성하기 위해 device directives를 제거 할때 True로 설정.
+> freeze_session()의
+>
+> > session: TF session object
+> > keep_var_names: 일부 varable이 frozen (예를 들어 stateful 모델)되지 않기를 원한다면 True설정.
+> > output_names: output으로 생성되기를 바라는 operation의 이름들을 element로 갖는 list.
+> > clear_devices: graph를 좀 더 portable하게 생성하기 위해 device directives를 제거 할때 True로 설정.
 
 이후, Keras 모델 model을 freeze_session()을 이용하여 tensorflow graph (frozen_graph)로 생성해준다.
 
