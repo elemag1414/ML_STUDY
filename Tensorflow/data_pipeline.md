@@ -1,6 +1,7 @@
 # Input Data Pipeline 만들기
 
-[출처](https://medium.com/trackin-datalabs/input-data-tf-data-%EC%9C%BC%EB%A1%9C-batch-%EB%A7%8C%EB%93%A4%EA%B8%B0-1c96f17c3696)
+[출처1](https://medium.com/trackin-datalabs/input-data-tf-data-%EC%9C%BC%EB%A1%9C-batch-%EB%A7%8C%EB%93%A4%EA%B8%B0-1c96f17c3696)
+| [출처2](<https://locslab.github.io/Tensorflow-Dataset-API(2)/>)
 
 기존에 pipeline 생성을 위해 사용하던 방법인 데이터를 tfrecord로 변환하고서 그 파일을 학습 데이터로 넣으려고 할 때 enqueue dequeue를 이용하면 코드도 복잡하고, 여러가지 불편함들을 많았다.
 
@@ -9,6 +10,7 @@ tf.data를 이용하면 편리하게 tfrecord를 열 수 있는 것 뿐만이 �
 ## why tf.data?
 
 tf.data는 단순할 뿐 아니라 재사용이 가능하고 복잡한 input pipleline도 구축할 수 있다.
+
 예를 들어, image model의 pipleline은 분산 파일 시스템의 파일에서 데이터를 가져온 후,
 각 이미지 dataset을 섞고 batch를 적용하는 것을 매우 직관적이고 쉽게 만들 수 있다.
 
@@ -18,7 +20,50 @@ tf.data는 단순할 뿐 아니라 재사용이 가능하고 복잡한 input pip
 - tf.data.Dataset은 변환(transformation)을 실시 할 수 있고, 변환(transformation)을 적용하면 변환된 tf.data.Dataset이 만들어진다.
 - tf.data.Iterator는 dataset에서 element 들을 추출하는 편리한 방법들을 제공한다. element들을 주출할때 Iterator.get_next() 을 실행하면 이전에 실행되었던 element의 다음 element를 반환한다. input pipeline code와 model graph code 간에 interface역할을 한다 보면 될 것이다.
 
-## tf.data로 데이터 만들기
+# Basic Mechanism
+
+tf.data를 사용하여 pipeline을 만드는 절차를 살펴보자
+
+## tf.data.Datasets 생성
+
+먼저 디스크에 위치한 일반 데이터들을 tf.data.Datasets 객체로 만들기 위해서는 다음의 두가지 method가 이용된다.
+
+- tf.data.Dataset.from_tensors()
+- tf.data.Dataset.from_tensor_slice()
+
+> 만약 저장된 데이터가 tfrecord format인 경우,
+> tf.data.TFRecordDataset()를 이용하여 load 한다.
+> TFRecordDataset 변환은 [여기]를 참조한다.
+
+tf.data.Dataset.from_tensors()와 tf.data.Dataset.from_tensor_slice()의 차이점은
+반환된 객체가 데이터 전체를 저장하느냐 여부이다.
+
+다음의 예를 보자
+[예제]
+
+```python
+sample = tf.random_uniform([4, 10])
+sess = tf.Session()
+sess.run(tf.global_variables_initializer())
+
+# 객체 생성
+dataset1 = tf.data.Dataset.from_tensors(sample)
+dataset2 = tf.data.Dataset.from_tensor_slices(sample)
+
+# 출력
+print(dataset1)
+print(dataset2)
+```
+
+```bash
+ls -la
+```
+
+<br>
+
+---
+
+# tf.data로 input pipeline 만들기 예제
 
 일반적인 input data 생성 순서는 다음과 같다:
 
@@ -30,15 +75,15 @@ tf.data는 단순할 뿐 아니라 재사용이 가능하고 복잡한 input pip
 
 <br>
 
-### 1. 데이터 준비 (경로 설정 및 이미지/레이블 생성)
+## 1. 데이터 준비 (경로 설정 및 이미지/레이블 생성)
 
 제일 먼저 원하는 데이터들의 경로를 받아 리스트로 담고서 아래와 같은 함수에 넣어준다.
 
-#### <b>tf.data.TFRecordDataset(filenames)</b>
+### <b>tf.data.TFRecordDataset(filenames)</b>
 
-이미지 파일을 tfrecord 데이터로 변환 할 때 이 함수를 사용한다.
+입력 데이터가 tfrecord 형태로 디스크에 저장되어 있을 경우, 이 함수를 사용하여 dataset생성한다.
 
-#### <b>tf.data.Dataset.from_tensor_slices(filenames)</b>
+### <b>tf.data.Dataset.from_tensor_slices(filenames)</b>
 
 제일 먼저 일반 이미지나 array를 넣을 때 list 형식으로 넣어준다. 이미지 경로들이 담긴 리스트 일 수도 있고, raw 데이터의 리스트 일 수도 있다. 다음은 이 함수를 이용하는 예제이다.
 
@@ -48,7 +93,7 @@ dataset = tf.data.Dataset.from_tensor_slices((image_list, label_list))
 
 <br>
 
-### 2. 데이터 입력 방식 정의
+## 2. 데이터 입력 방식 정의
 
 tfrecords가 아닌 numpy 형태나 기타의 방식(예를 들어 OpenCV로 이미지 입력받는 경우)으로
 image를 읽어야 한다면 다음과 같이 preprocess 단계를 거쳐야 한다.
@@ -78,7 +123,7 @@ dataset = dataset.map(_resize_function)
 > 위에서 언급한 바와같이, 이 방법은 tfRecord가 아닌 다른 방식으로 image를 읽을 때 사용되는 방식으로,
 > tfRecord로 변환하여 training등을 수행할때는 이 단계를 skip한다.
 
-### 3. 데이터 입력 옵션 정의
+## 3. 데이터 입력 옵션 정의
 
 입력 dataset을 학습시 처리하기 위해 여러 옵션을 정의할 수 있다.
 
@@ -90,7 +135,7 @@ dataset = dataset.repeat()
 dataset = dataset.shuffle(buffer_size=(int(len(data_list) * 0.4) + 3 * batch_size))
 ```
 
-### 4. batch size 설정
+## 4. batch size 설정
 
 tf.data api가 제공되기 전까진 사용자가 batch에 대한 method를 정의하여 사용했으나, tf.data는 다음과 같이 batch() method를 제공한다.
 
@@ -98,7 +143,7 @@ tf.data api가 제공되기 전까진 사용자가 batch에 대한 method를 정
 dataset = dataset.batch(batch_size)
 ```
 
-### 5. iterator 생성
+## 5. iterator 생성
 
 iterator를 생성하여 image_stacked와 label_stacked를 생성해준다.
 
@@ -111,7 +156,7 @@ iterator = dataset.make_initializable_iterator()
 image_stacked, label_stacked = iterator.get_next()
 ```
 
-### 6. Session 수행하기
+## 6. Session 수행하기
 
 이제, tf.Session()을 생성하고 iterator를 통해 dataset을 feed-in하면
 각 loop애서 처리할 image와 label이 load 된다.
@@ -124,7 +169,7 @@ with tf.Session() as sess:
     image, label = sess.run([image_stacked, label_stacked])
 ```
 
-### 최종 예제
+## 최종 예제
 
 다음은 상기 내용을 이용한 최종 예제이다.
 
