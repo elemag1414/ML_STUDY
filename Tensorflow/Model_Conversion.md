@@ -15,6 +15,8 @@ save_path = saver.save(sess, "/path/to_ckpt/model.ckpt")
 
 ## Convert Keras Model (h5) to Tensorflow Model (pb format)
 
+> [출처: Stack overflow](https://stackoverflow.com/questions/45466020/how-to-export-keras-h5-to-tensorflow-pb)
+
 pb format으로 변환하는 방법은 ckpt로 변환하는 방법과 유사하지만,
 pb format으로 변환하기 위해서는 export하기 위한 freeze과정을 거쳐야 한다.
 
@@ -77,10 +79,21 @@ frozen_graph는 tensorflow graph 이며,
 tf.train.write_graph(frozen_graph, "some_directory", "my_model.pb", as_text=False)
 ```
 
-> [출처: Stack overflow](https://stackoverflow.com/questions/45466020/how-to-export-keras-h5-to-tensorflow-pb) <br><br>
-
 ## Convert Tensorflow model to Keras model
 
-To be added <br><br>
+아직 정확히 파악한것은 아니지만,
+tf ckpt를 kera h5로 변환하는 간단한 방법은 찾지 못했다.
+
+보통 사용하는 방법이
+tf ckpt를 생성한 tensorflow ML 모델과 등가인 keras 모델을 만들고
+ckpt의 weight를 생성된 keras 모델에 layer별로 load하는 방식인것 같다.
+
+예를 들어,
+tf VGG16 모델에서 keras VGG16 모델로 변환하는 경우를 생각해보자.
+우선, keras로 VGG16 모델을 만들어
+이를 model로 정의한 다음
+keras의 layer.load_weights(weights)를 통해 ckpt의 weights를 load 한다.
+
+언급한대로, 전혀 편한 방법은 아닌듯 싶다.
 
 ##### [[Tensorflow로 돌아가기]](https://github.com/elemag1414/ML_STUDY/tree/master/Tensorflow)|[[Keras로 돌아기기]](https://github.com/elemag1414/Keras)|[[ML_STUDY로 돌아기기]](https://github.com/elemag1414/ML_STUDY)
