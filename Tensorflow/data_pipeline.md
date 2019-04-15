@@ -148,10 +148,10 @@ tf.data.Iterator를 통해 각 element를 access하여 실제 값을 추출하�
 
 tf.data에는 다음과 같이 총 4가지 형태의 iterator를 제공한다:
 
-- [one-shot](#one-shot-iterator)
-- initializable
-- reinitializable
-- feedable
+- [one-shot iterator](#one-shot-iterator)
+- [initializable iterator](#initializable-iterator)
+- [reinitializable iterator](#reinitializable-iterator)
+- [feedable iterator](#feedable-iterator)
 
 각각에 대해 살펴보자
 
