@@ -35,16 +35,18 @@
 - 작성예
 
 ```json
-"Add Path to PYTHONPATH": {
-		"prefix": "sn_addPYPATH",
-		"body": [
-			"def addPYTHONPath(dir):",
-			"    import os",
-			"    import sys",
-			"    path = os.getcwd()",
-			"    path += '/' + dir",
-			"    sys.path.append(path)"
-		],
-		"description": "Add Path to PYTHONPATH"
+{
+  "Add Path to PYTHONPATH": {
+    "prefix": "sn_addPYPATH",
+    "body": [
+      "def addPYTHONPath(dir):",
+      "    import os",
+      "    import sys",
+      "    path = os.getcwd()",
+      "    path += '/' + dir",
+      "    sys.path.append(path)"
+    ],
+    "description": "Add Path to PYTHONPATH"
   }
+}
 ```
