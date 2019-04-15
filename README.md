@@ -6,6 +6,6 @@
 
 ### [Keras](https://github.com/elemag1414/ML_STUDY/blob/master/Keras/README.md)
 
-## [Python](https://github.com/elemag1414/ML_STUDY/blob/master/Python/README.md)
+### [Python](https://github.com/elemag1414/ML_STUDY/blob/master/Python/README.md)
 
-## [VSCode](https://github.com/elemag1414/ML_STUDY/blob/master/VSCode/README.md)
+### [VSCode](https://github.com/elemag1414/ML_STUDY/blob/master/VSCode/README.md)
