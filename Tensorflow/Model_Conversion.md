@@ -57,7 +57,7 @@ model.load_weights('model_weights.h5')
 
 <br>
 - <b>[Option 2]</b> Entire Model <br>
-  > 다음은 ML Model 전체를 하나의 h5파일로 저장하고 다시 불러오는 snippet이다.
+> 다음은 ML Model 전체를 하나의 h5파일로 저장하고 다시 불러오는 snippet이다.
 
 ```python
 from keras.models import load_model
