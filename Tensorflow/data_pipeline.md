@@ -21,6 +21,7 @@ Tensorflow는 이러한 Input Data Pipleline을 생성하기 위한 api를 제�
 ## API 구조
 
 ![APIs](tf_ML_api.png)
+[Captured from](https://www.youtube.com/watch?v=5DknTFbcGVM)
 
 Tensforflow의 ML API 구조는 대략 위와 같다.
 
