@@ -20,6 +20,8 @@ tf.data는 단순할 뿐 아니라 재사용이 가능하고 복잡한 input pip
 - tf.data.Dataset은 변환(transformation)을 실시 할 수 있고, 변환(transformation)을 적용하면 변환된 tf.data.Dataset이 만들어진다.
 - tf.data.Iterator는 dataset에서 element 들을 추출하는 편리한 방법들을 제공한다. element들을 주출할때 Iterator.get_next() 을 실행하면 이전에 실행되었던 element의 다음 element를 반환한다. input pipeline code와 model graph code 간에 interface역할을 한다 보면 될 것이다.
 
+---
+
 # Basic Mechanism
 
 tf.data를 사용하여 pipeline을 만드는 절차를 살펴보자
@@ -39,6 +41,7 @@ tf.data.Dataset.from_tensors()와 tf.data.Dataset.from_tensor_slice()의 차이�
 반환된 객체가 데이터 전체를 저장하느냐 여부이다.
 
 다음의 예를 보자
+
 [예제]
 
 ```python
@@ -51,13 +54,80 @@ dataset1 = tf.data.Dataset.from_tensors(sample)
 dataset2 = tf.data.Dataset.from_tensor_slices(sample)
 
 # 출력
-print(dataset1)
-print(dataset2)
+print('dataset1: {}'format(dataset1))
+print('dataset2: {}'.format(dataset2))
 ```
 
+[결과]
+
 ```bash
-ls -la
+dataset1: <TensorDataset shapes: (4, 10), types: tf.float32>
+dataset2: <TensorSliceDataset shapes: (10,), types: tf.float32>
 ```
+
+결과에서 보여지듯,
+dataset1은 생성된 sample 텐서를 모두 저장하고 있고,
+dataset2은 생성된 sample 텐서를 slice해서 저장하고 있다. <br>
+
+tf.data.Dataset.from_tensor() 또는 tf.data.Dataset.from_tensor_slices()로
+tf.data.Datasets객체가 만들어지면 객체안에 구성되는 element들은 동일한 구조로 구성된다.
+
+각 element들은 tf.Tensor 형태이며 element 유형을 나타내는 tf.DType과 모양을 나타내는
+tf.TensorShape로 구성된다.
+
+<br>
+
+또한, tf.data.Datasets로 생성되는 객체는 collection.namedtuple 또는 dictionary를
+이용하여 각 구성요소를 정의 할 수 있다.
+
+```python
+# nametuples 를 이용한 구성요소 이름 지정
+import collections
+Sample = collections.namedtuple('sample_data', 'a b')
+sample_data = Sample(
+    tf.random_uniform([4]), tf.random_uniform([4, 100], maxval=100, dtype=tf.int32))
+dataset = tf.data.Dataset.from_tensor_slices(sample_data)
+print(dataset.output_types)     # ==> sample_data(a=tf.float32, b=tf.int32)
+print(dataset.output_shapes)    # ==> sample_data(a=TensorShape([]), b=TensorShape([Dimension(100)]))
+print(dataset.output_types.a)   # ==> <dtype: 'float32'>
+print(dataset.output_types.b)   # ==> <dtype: 'int32'>
+print(dataset.output_shapes.a)  # ==> ()
+print(dataset.output_shapes.b)  # ==> (100, )
+
+
+# dict 를 이용한 구성요소 이름 지정
+dataset = tf.data.Dataset.from_tensor_slices(
+    {
+        'a': tf.random_uniform([4]),
+        'b': tf.random_uniform([4, 100], maxval=100, dtype=tf.int32)
+    }
+)
+print(dataset.output_types)     # ==> {'a' : tf.float32, 'b' : tf.int32}
+print(dataset.output_shapes)    # ==> {'a': TensorShape([]), 'b': TensorShape([Dimension(100)])}
+print(dataset.output_types['a'])    # ==> <dtype: 'float32'>
+print(dataset.output_types['b'])    # ==> <dtype: 'int32'>
+print(dataset.output_shapes['a'])   # ==> ()
+print(dataset.output_shapes['b'])   # ==> (100, )
+```
+
+## Datasets 변환 (transformation)
+
+tf.data.Datasets 객체가 생성되면 method들을 호출하여 tf.data.Datasets을 여러가지형태로 transformation 할 수 있다.
+
+예를들어 각 요소(element) 별로도 변형이 가능 (ex. tf.data.Dataset.map()) 하고,
+
+전체 데이터셋에 대해서도 변형이 가능하다. (ex. tf.data.Dataset.batch()).
+
+tf.data.Datasets은 transformation과 관련된 다음과 같이 많은 method들이 있는데 해당하는 method들의 list는
+해당 링크를 통해 확인한다. [[tf.data.Dataset API]](https://www.tensorflow.org/api_docs/python/tf/data/Dataset):
+
+- [.apply(): transformation 적용](https://www.tensorflow.org/api_docs/python/tf/data/Dataset#apply)
+- [.concatenate()](https://www.tensorflow.org/api_docs/python/tf/data/Dataset#concatenate)
+- [.filter()](https://www.tensorflow.org/api_docs/python/tf/data/Dataset#filter)
+- [.flat_map()](https://www.tensorflow.org/api_docs/python/tf/data/Dataset#flat_map)
+- [.interleave()](https://www.tensorflow.org/api_docs/python/tf/data/Dataset#interleave)
+- [.map()](https://www.tensorflow.org/api_docs/python/tf/data/Dataset#map)
+- [.reduce()](https://www.tensorflow.org/api_docs/python/tf/data/Dataset#reduce)
 
 <br>
 
