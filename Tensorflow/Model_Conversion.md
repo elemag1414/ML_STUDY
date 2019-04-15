@@ -82,16 +82,16 @@ tf.train.write_graph(frozen_graph, "some_directory", "my_model.pb", as_text=Fals
 ## Convert Tensorflow model to Keras model
 
 아직 정확히 파악한것은 아니지만,
-tf ckpt를 kera h5로 변환하는 간단한 방법은 찾지 못했다.
+tf ckpt를 keras h5로 변환하는 간단한 방법은 찾지 못했다.
 
 보통 사용하는 방법이
 tf ckpt를 생성한 tensorflow ML 모델과 등가인 keras 모델을 만들고
 ckpt의 weight를 생성된 keras 모델에 layer별로 load하는 방식인것 같다.
 
 예를 들어,
-tf VGG16 모델에서 keras VGG16 모델로 변환하는 경우를 생각해보자.
+tf VGG16 pretrained 모델로부터 keras VGG16 모델로 변환하는 경우를 생각해보자.
+
 우선, keras로 VGG16 모델을 만들어
-이를 model로 정의한 다음
 keras의 layer.load_weights(weights)를 통해 ckpt의 weights를 load 한다.
 
 언급한대로, 전혀 편한 방법은 아닌듯 싶다.
