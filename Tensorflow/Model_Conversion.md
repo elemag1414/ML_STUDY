@@ -30,7 +30,7 @@ Option 1. Weights(.h5)와 Model Architecture (.json)으로 저장 및 불러오�
 Option 2. Model 전체 (.h5)를 저장 및 불러오기 <br>
 할 수 있다. <br>
 
-- <b>Option 1</b>: Weights and Model Architecture
+- <b>[Option 1]</b> Weights and Model Architecture
 
 > 저장하기 <br>
 
@@ -56,7 +56,7 @@ model.load_weights('model_weights.h5')
 ```
 
 <br>
-- Option 2: Entire Model <br>
+- <b>[Option 2]</b> Entire Model <br>
   > 다음은 ML Model 전체를 하나의 h5파일로 저장하고 다시 불러오는 snippet이다.
 
 ```python
