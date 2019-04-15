@@ -8,4 +8,4 @@
 
 ## Python
 
-## [VSCode](https://github.com/elemag1414/ML_STUDY/master/readme.md)
+## [VSCode](https://github.com/elemag1414/ML_STUDY/tree/master/VSCode/readme.md)
