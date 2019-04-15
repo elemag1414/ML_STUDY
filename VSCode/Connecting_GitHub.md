@@ -10,7 +10,7 @@
 
 commit 버튼을 클릭하면 Source Control Git 패널이 나타난다.
 메시지 창에 comment를 적고 상단의 v 표시 버튼을 클리하면
-Local Commit 수행된다.
+Local Commit 수행된다. <br>
 ![Synch버튼](https://github.com/elemag1414/ML_STUDY/blob/master/VSCode/Commit_Confirm_Button.png) <br>
 
 이제 Local Commit된 내용을 GitHub 프로젝트에 Upload한다.
