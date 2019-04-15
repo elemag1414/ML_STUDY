@@ -30,7 +30,7 @@
 
 > body 내용을 작성할때 indentation등 여러가지 불편한 점이 많다.
 > 다음 web기반 작성기을 사용하면 좀 더 편하게 작성할 수 있다.
-> [snippet 작성기](https://snippet-generator.app/)
+> [[snippet 작성기]](https://snippet-generator.app/)
 
 - 작성예
 
