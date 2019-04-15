@@ -6,6 +6,18 @@
 
 tf.data를 이용하면 편리하게 tfrecord를 열 수 있는 것 뿐만이 아니라 일반 이미지도 역시 손쉽게 배치로 생성하고 넣을 수 있다.
 
+## why tf.data?
+
+tf.data는 단순할 뿐 아니라 재사용이 가능하고 복잡한 input pipleline도 구축할 수 있다.
+예를 들어, image model의 pipleline은 분산 파일 시스템의 파일에서 데이터를 가져온 후,
+각 이미지 dataset을 섞고 batch를 적용하는 것을 매우 직관적이고 쉽게 만들 수 있다.
+
+## tf.data의 특징
+
+- tf.data.Dataset는 각 요소가 하나 이상의 tf.Tensor를 포함하는 elements들을 갖는다.
+- tf.data.Dataset은 변환(transformation)을 실시 할 수 있고, 변환(transformation)을 적용하면 변환된 tf.data.Dataset이 만들어진다.
+- tf.data.Iterator는 dataset에서 element 들을 추출하는 편리한 방법들을 제공한다. element들을 주출할때 Iterator.get_next() 을 실행하면 이전에 실행되었던 element의 다음 element를 반환한다. input pipeline code와 model graph code 간에 interface역할을 한다 보면 될 것이다.
+
 ## tf.data로 데이터 만들기
 
 일반적인 input data 생성 순서는 다음과 같다:
