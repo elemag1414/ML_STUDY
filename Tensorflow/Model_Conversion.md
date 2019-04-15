@@ -1,6 +1,6 @@
 # Trained Model 변환하기
 
-## Convert Keras hd5 file to ckpt
+## Convert Keras Model (h5) to Tensorflow Model (ckpt)
 
 ```python
 # Add ops to save and restore all the variables.
@@ -13,7 +13,7 @@ save_path = saver.save(sess, "/path/to_ckpt/model.ckpt")
 
 > [출처: Stack overflow](https://github.com/keras-team/keras/issues/9040)
 
-### \* Convert
+## Convert Tensorflow model to Keras model
 
 ### \* ML Model
 
@@ -26,7 +26,7 @@ ML Model은 대부분 Architecture와 Weights로 구성되며,
 Keras는 ML 모델을 <br>
 Option 1. Weights(.h5)와 Model Architecture (.json)으로 저장 및 불러오기 <br>
 Option 2. Model 전체 (.h5)를 저장 및 불러오기 <br>
-할 수 있다. <br> <br>
+할 수 있다. <br>
 
 - Option 1: Weights and Model Architecture
   > 저장하기 <br>
@@ -74,7 +74,7 @@ model = load_model('my_model.h5')
 2. Weights of the model
 3. Training configuration (e.g. loss, optimizer)
 4. State of the optimizer (allows you to resume the trainig from exactly where you left off)
-   주: pickle 혹은 cPickle을 사용하여 keras model을 저장하는 방법은 권장하지 않는다.
+   주: pickle 혹은 cPickle을 사용하여 keras model을 저장하는 방법은 권장하지 않는다. <br><br>
 
 #### Tensorflow Model
 
