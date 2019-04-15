@@ -30,7 +30,7 @@ Option 1. Weights(.h5)와 Model Architecture (.json)으로 저장 및 불러오�
 Option 2. Model 전체 (.h5)를 저장 및 불러오기 <br>
 할 수 있다. <br>
 
-- Option 1: Weights and Model Architecture
+- <b>Option 1</b>: Weights and Model Architecture
 
 > 저장하기 <br>
 
