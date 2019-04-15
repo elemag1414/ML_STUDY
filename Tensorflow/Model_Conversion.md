@@ -23,26 +23,26 @@ ML Model은 대부분 Architecture와 Weights로 구성되며,
 
 #### Keras Model [[출처]](https://jovianlin.io/saving-loading-keras-models/)
 
-Keras는 ML 모델을
-Option 1. Weights(.h5)와 Model Architecture (.json)으로 저장 및 불러오기
-Option 2. Model 전체 (.h5)를 저장 및 불러오기
-할 수 있다.
+Keras는 ML 모델을 <br>
+Option 1. Weights(.h5)와 Model Architecture (.json)으로 저장 및 불러오기 <br>
+Option 2. Model 전체 (.h5)를 저장 및 불러오기 <br>
+할 수 있다. <br>
 
 - Option 1: Weights and Model Architecture
   > 저장하기
 
 >
 
-> ```python
-> # Save the weights
-> model.save_weights('model_weights.h5')
->
-> # Save the model architecture
->
-> with open('model_architecture.json', 'w') as f:
-> f.write(model.to_json())
->
-> ```
+> > ```python
+> > # Save the weights
+> > model.save_weights('model_weights.h5')
+> >
+> > # Save the model architecture
+> >
+> > with open('model_architecture.json', 'w') as f:
+> > f.write(model.to_json())
+> >
+> > ```
 
 > > 불러오기
 
