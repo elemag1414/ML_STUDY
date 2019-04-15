@@ -11,7 +11,7 @@ sess = keras.backend.get_session()
 save_path = saver.save(sess, "/path/to_ckpt/model.ckpt")
 ```
 
-> [출처: Stack overflow](https://github.com/keras-team/keras/issues/9040)
+> [출처: Stack overflow](https://github.com/keras-team/keras/issues/9040) <br>
 
 ## Convert Tensorflow model to Keras model
 
