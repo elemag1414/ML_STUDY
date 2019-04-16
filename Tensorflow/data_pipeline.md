@@ -177,7 +177,6 @@ def main():
         sess.run(iterator.initializer)
         while True:
 
-            cnt += 1
             try:
                 image, label = sess.run([image_stacked, label_stacked])
 
