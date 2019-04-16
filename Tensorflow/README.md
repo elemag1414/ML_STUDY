@@ -6,7 +6,7 @@
 > 개발에 필요한 내용과 나름 유용하다 생각되는 내용들을 정리해 본다. <br><br>
 
 - [Input Data Pipeline 만들기](https://github.com/elemag1414/ML_STUDY/blob/master/Tensorflow/data_pipeline.md)
-- Input Data를 TFRecode format으로 변환하기
+- [Input Data를 TFRecode format으로 변환하기](tfRecord.md)
 - TF ML API
 - [Model 저장/불러오기](https://github.com/elemag1414/ML_STUDY/blob/master/Tensorflow/Model_Save_Load.md)
 - [Trained Model 변환하기](https://github.com/elemag1414/ML_STUDY/blob/master/Tensorflow/Model_Conversion.md)
