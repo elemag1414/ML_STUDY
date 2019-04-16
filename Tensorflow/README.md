@@ -5,9 +5,15 @@
 > 하지만, 자주 갱신되는 api (2018년도부터 폭풍 update가 진행되고 있다.) 덕분에 따라잡기도 버겁다. <br>
 > 개발에 필요한 내용과 나름 유용하다 생각되는 내용들을 정리해 본다. <br><br>
 
-- [Input Data Pipeline 만들기 (Classification)](https://github.com/elemag1414/ML_STUDY/blob/master/Tensorflow/data_pipeline.md)
-- [Input Data Pipeline 만들기 (Object Dection)]
+- [Input Data Pipeline 만들기 (Classification)
+
+  > > [Classification](https://github.com/elemag1414/ML_STUDY/blob/master/Tensorflow/data_pipeline.md)
+  > > Object Detection: To be added
+
 - [Input Data를 TFRecode format으로 변환하기](tfRecord.md)
+
+- Tensorflow ML Model API diagram : To be added
+
 - Tensorflow APIs
 
   > > [Estimator API](https://www.tensorflow.org/api_docs/python/tf/estimator)
