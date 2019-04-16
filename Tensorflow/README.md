@@ -9,10 +9,11 @@
 - [Input Data를 TFRecode format으로 변환하기](tfRecord.md)
 - Tensorflow APIs
 
-* [Estimator API](https://www.tensorflow.org/api_docs/python/tf/estimator)
-* [Experiment API](https://www.tensorflow.org/api_docs/python/tf/experimental)
-* [Train API](https://www.tensorflow.org/api_docs/python/tf/train)
-* see Train.Features also
+  > > [Estimator API](https://www.tensorflow.org/api_docs/python/tf/estimator)
+  > > [Experiment API](https://www.tensorflow.org/api_docs/python/tf/experimental)
+  > > [Train API](https://www.tensorflow.org/api_docs/python/tf/train)
+  > >
+  > > > see Train.Features also
 
 - [Model 저장/불러오기](https://github.com/elemag1414/ML_STUDY/blob/master/Tensorflow/Model_Save_Load.md)
 - [Trained Model 변환하기](https://github.com/elemag1414/ML_STUDY/blob/master/Tensorflow/Model_Conversion.md)
