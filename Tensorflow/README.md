@@ -16,7 +16,9 @@
 
 - Tensorflow APIs
 
-  > > [Estimator API](https://www.tensorflow.org/api_docs/python/tf/estimator) <br> > > [Experiment API](https://www.tensorflow.org/api_docs/python/tf/experimental) <br> > > [Train API](https://www.tensorflow.org/api_docs/python/tf/train) <br>
+  > > [Estimator API](https://www.tensorflow.org/api_docs/python/tf/estimator) <br>
+  > > [Experiment API](https://www.tensorflow.org/api_docs/python/tf/experimental) <br>
+  > > [Train API](https://www.tensorflow.org/api_docs/python/tf/train) <br>
   > >
   > > > see Train.Features also
 
