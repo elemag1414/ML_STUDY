@@ -13,38 +13,37 @@ tf.data를 이용하면 편리하게 tfrecord를 열 수 있는 것 뿐만이 �
 
 ## why tf.data?
 
-tf.data는 단순할 뿐 아니라 재사용이 가능하고 복잡한 input pipleline도 구축할 수 있다.
+`tf.data`는 단순할 뿐 아니라 재사용이 가능하고 복잡한 input pipleline도 구축할 수 있다.
 
 예를 들어, image model의 pipleline은 분산 파일 시스템의 파일에서 데이터를 가져온 후,
 각 이미지 dataset을 섞고 batch를 적용하는 것을 매우 직관적이고 쉽게 만들 수 있다.
 
 ## tf.data의 특징
 
-- tf.data.Dataset는 각 요소가 하나 이상의 tf.Tensor를 포함하는 elements들을 갖는다.
-- tf.data.Dataset은 변환(transformation)을 실시 할 수 있고, 변환(transformation)을 적용하면 변환된 tf.data.Dataset이 만들어진다.
-- tf.data.Iterator는 dataset에서 element 들을 추출하는 편리한 방법들을 제공한다. element들을 주출할때 Iterator.get_next() 을 실행하면 이전에 실행되었던 element의 다음 element를 반환한다. input pipeline code와 model graph code 간에 interface역할을 한다 보면 될 것이다.
+- `tf.data.Dataset`는 각 요소가 하나 이상의 tf.Tensor를 포함하는 elements들을 갖는다.
+- `tf.data.Dataset`은 변환(transformation)을 실시 할 수 있고, 변환(transformation)을 적용하면 변환된 `tf.data.Dataset`이 만들어진다.
+- `tf.data.Iterator`는 dataset에서 element 들을 추출하는 편리한 방법들을 제공한다. element들을 주출할때 `Iterator.get_next()` 을 실행하면 이전에 실행되었던 element의 다음 element를 반환한다. input pipeline code와 model graph code 간에 interface역할을 한다 보면 될 것이다.
 
 ---
 
 # Basic Mechanism
 
-tf.data를 사용하여 pipeline을 만드는 절차를 살펴보자
+`tf.data`를 사용하여 pipeline을 만드는 절차를 살펴보자
 
 <br>
 
 ## tf.data.Datasets 생성
 
-먼저 디스크에 위치한 일반 데이터들을 tf.data.Datasets 객체로 만들기 위해서는 다음의 두가지 method가 이용된다.
+먼저 디스크에 위치한 일반 데이터들을 `tf.data.Datasets` 객체로 만들기 위해서는 다음의 두가지 method가 이용된다.
 
-- tf.data.Dataset.from_tensors()
-- tf.data.Dataset.from_tensor_slice()
+- `tf.data.Dataset.from_tensors()`
+- `tf.data.Dataset.from_tensor_slice()`
 
 > 만약 저장된 데이터가 tfrecord format인 경우,
 > tf.data.TFRecordDataset()를 이용하여 load 한다.
 > TFRecordDataset 변환은 [여기]를 참조한다.
 
-tf.data.Dataset.from_tensors()와 tf.data.Dataset.from_tensor_slice()의 차이점은
-반환된 객체가 데이터 전체를 저장하느냐 여부이다.
+`tf.data.Dataset.from_tensors()`와 `tf.data.Dataset.from_tensor_slice()`의 차이점은 반환된 객체가 데이터 전체를 저장하느냐 여부이다.
 
 <br>
 
@@ -74,8 +73,8 @@ dataset2: <TensorSliceDataset shapes: (10,), types: tf.float32>
 ```
 
 결과에서 보여지듯,
-dataset1은 생성된 sample 텐서를 모두 저장하고 있고,
-dataset2은 생성된 sample 텐서를 slice해서 저장하고 있다.
+`dataset1`은 생성된 `sample` 텐서를 모두 저장하고 있고,
+`dataset2`은 생성된 `sample` 텐서를 slice해서 저장하고 있다.
 
 `tf.data.Datasets` 객체는 `tf.data.Dataset.from_tensor()` 또는 `tf.data.Dataset.from_tensor_slices()` 를 사용하여 생성되며, 객체의 element들은 동일한 구조로 구성된다.
 
@@ -83,7 +82,7 @@ dataset2은 생성된 sample 텐서를 slice해서 저장하고 있다.
 
 <br>
 
-또한, tf.data.Datasets로 생성되는 객체는 collection.namedtuple 또는 dictionary를
+또한, `tf.data.Datasets`로 생성되는 객체는 `collection.namedtuple` 또는 dictionary를
 이용하여 각 구성요소를 정의 할 수 있다.
 
 ```python
@@ -120,13 +119,13 @@ print(dataset.output_shapes['b'])   # ==> (100, )
 
 ## Datasets 변환 (transformation)
 
-tf.data.Datasets 객체가 생성되면 method들을 호출하여 tf.data.Datasets을 여러가지형태로 transformation 할 수 있다.
+`tf.data.Datasets` 객체가 생성되면 method들을 호출하여 `tf.data.Datasets`을 여러가지형태로 transformation 할 수 있다.
 
-예를들어 각 요소(element) 별로도 변형이 가능 (ex. tf.data.Dataset.map()) 하고,
+예를들어 각 요소(element) 별로도 변형이 가능 (ex. `tf.data.Dataset.map()`) 하고,
 
-전체 데이터셋에 대해서도 변형이 가능하다. (ex. tf.data.Dataset.batch()).
+전체 데이터셋에 대해서도 변형이 가능하다. (ex. `tf.data.Dataset.batch()`).
 
-tf.data.Datasets은 transformation과 관련된 다음과 같이 많은 method들이 있는데 해당하는 method들의 list는
+`tf.data.Datasets`은 transformation과 관련된 다음과 같이 많은 method들이 있는데 해당하는 method들의 list는
 해당 링크를 통해 확인한다. [[tf.data.Dataset API]](https://www.tensorflow.org/api_docs/python/tf/data/Dataset):
 
 - [.apply(): transformation 적용](https://www.tensorflow.org/api_docs/python/tf/data/Dataset#apply)
@@ -141,10 +140,10 @@ tf.data.Datasets은 transformation과 관련된 다음과 같이 많은 method�
 
 ## Iterator 생성
 
-생성된 tf.data.Datasets의 element를 access하기 위해서는 tf.data.Iterator를 생성해야 한다.
-tf.data.Iterator를 통해 각 element를 access하여 실제 값을 추출하여 model에 입력해 줘야 실제 학습이 이뤄진다.
+생성된 `tf.data.Datasets`의 element를 access하기 위해서는 `tf.data.Iterator`를 생성해야 한다.
+`tf.data.Iterator`를 통해 각 element를 access하여 실제 값을 추출하여 model에 입력해 줘야 실제 학습이 이뤄진다.
 
-tf.data에는 다음과 같이 총 4가지 형태의 iterator를 제공한다:
+`tf.data`에는 다음과 같이 총 4가지 형태의 iterator를 제공한다:
 
 - [one-shot iterator](#one-shot-iterator)
 - [initializable iterator](#initializable-iterator)
@@ -159,9 +158,9 @@ one-shot iterator는 명시적으로 초기화 할 필요없이 한 번만 반�
 one-shot iterator는 기존 큐 기반 input pipeline이 지원하는 거의 모든 경우를 처리한다.
 
 아래 예제를 통해 사용 방법을 살펴보자.
-tf.data.Dataset.range(100)을 사용하여 0~100까지 데이터를 갖는 객체 dataset을 생성하고
-make_one_shot_iterator()를 이용하여 iterator를 생성하였다.
-이후 element의 access는 get_next()를 통해 다음 element를 접근한다.
+`tf.data.Dataset.range(100)`을 사용하여 0~100까지 데이터를 갖는 객체 dataset을 생성하고
+`make_one_shot_iterator()`를 이용하여 iterator를 생성하였다.
+이후 element의 access는 `get_next()`를 통해 다음 element를 접근한다.
 
 > get_next()는 dunder method인 graph(next_elements)를 수행하여 다음 element를 접근한다.
 
@@ -176,10 +175,10 @@ print(sess.run(next_element))   # ==> 2
 print(sess.run(next_element))   # ==> 3
 ```
 
-sess.run 할때마다 순차적으로 element가 출력됨을 확인 할 수 있다.
+`sess.run` 할때마다 순차적으로 element가 출력됨을 확인 할 수 있다.
 
 위에서 one-shot iterator는 한 번만 반복 할 수 있는 iterator라고 설명하였다.
-다음 예제를 보면, while문을 사용하여 element를 출력하는 loop를 두번 반복해 보면,
+다음 예제를 보면, `while`문을 사용하여 element를 출력하는 loop를 두번 반복해 보면,
 실제로는 한번만 실행되는 것을 볼 수 있다.
 
 ```python
@@ -227,10 +226,10 @@ while True:
 ### initializable iterator
 
 initializable iterator는 one-shot iterator 와 달리 작업을 시작하기 전에
-명시적으로 iterator.initializer를 실행하도록 요구한다.
+명시적으로 `iterator.initializer`를 실행하도록 요구한다.
 
 이 불편함을 감수하야 하지만, 대신에 다음 예제와 같이 iterator를 초기화 할때
-`tf.data.Dataset’의 정의를 매개변수화 하여 사용 할 수 있다.
+`tf.data.Dataset`의 정의를 매개변수화 하여 사용 할 수 있다.
 
 ```python
 max_value = tf.placeholder(tf.int64, shape=[])
@@ -299,8 +298,8 @@ for _ in range(20):
 
 ### feedable iterator
 
-feedable iterator는 tf.placeholder를 선택하기 위해
-tf.Session.run 을 통해 iterator를 전환할때 dataset의
+feedable iterator는 `tf.placeholder`를 선택하기 위해
+`tf.Session.run` 을 통해 iterator를 전환할때 dataset의
 시작부분에서 iterator를 초기화 할 필요가 없다.
 
 ```python
