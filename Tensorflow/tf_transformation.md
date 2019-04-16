@@ -17,4 +17,4 @@
 - [.map()](https://www.tensorflow.org/api_docs/python/tf/data/Dataset#map)
 - [.reduce()](https://www.tensorflow.org/api_docs/python/tf/data/Dataset#reduce)
 
-##### [[Input Data Pipeline 만들기로 돌아가기]](data_pipeline.md)|[[Tensorflow로 돌아가기]](https://github.com/elemag1414/ML_STUDY/tree/master/Tensorflow)|[[ML_STUDY로 돌아기기]](https://github.com/elemag1414/ML_STUDY)
+##### [[Input Data Pipeline 만들기로 돌아가기]](data_pipeline.md#transformation과-iterator)|[[Tensorflow로 돌아가기]](https://github.com/elemag1414/ML_STUDY/tree/master/Tensorflow)|[[ML_STUDY로 돌아기기]](https://github.com/elemag1414/ML_STUDY)
