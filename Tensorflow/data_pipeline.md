@@ -62,7 +62,7 @@ dataset1 = tf.data.Dataset.from_tensors(sample)
 dataset2 = tf.data.Dataset.from_tensor_slices(sample)
 
 # 출력
-print('dataset1: {}'format(dataset1))
+print('dataset1: {}'.format(dataset1))
 print('dataset2: {}'.format(dataset2))
 ```
 
@@ -75,10 +75,9 @@ dataset2: <TensorSliceDataset shapes: (10,), types: tf.float32>
 
 결과에서 보여지듯,
 dataset1은 생성된 sample 텐서를 모두 저장하고 있고,
-dataset2은 생성된 sample 텐서를 slice해서 저장하고 있다. <br>
+dataset2은 생성된 sample 텐서를 slice해서 저장하고 있다.
 
-tf.data.Dataset.from_tensor() 또는 tf.data.Dataset.from_tensor_slices()로
-tf.data.Datasets객체가 만들어지면 객체안에 구성되는 element들은 동일한 구조로 구성된다.
+**tf.data.Datasets** 객체는 **tf.data.Dataset.from_tensor()** 또는 **tf.data.Dataset.from_tensor_slices()** 를 사용하여 생성되며, 객체의 element들은 동일한 구조로 구성된다.
 
 각 element들은 tf.Tensor 형태이며 element 유형을 나타내는 tf.DType과 모양을 나타내는
 tf.TensorShape로 구성된다.
