@@ -10,6 +10,8 @@
 
 ### [VSCode](https://github.com/elemag1414/ML_STUDY/blob/master/VSCode/README.md)
 
+---
+
 ### Extra Tips:
 
 #### [Simple Tips for .md](https://help.github.com/en/articles/basic-writing-and-formatting-syntax)
