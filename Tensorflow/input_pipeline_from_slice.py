@@ -3,30 +3,15 @@ from glob import glob
 from PIL import Image
 import numpy as np
 import matplotlib.pyplot as plt
-# import io
 
 image_path = 'dataset/images/'
 label_path = 'dataset/labels/'
 
 # Transform config
 resize = True
-num_epoch = 1
+num_epoch = 1   # 0 for repeat forever
 shuffle = True
-
-#NUM_CLASSES = 10
-# def input_parser(img_path, label):
-#     print('[input_parser] img_path: {}'.format(img_path))
-#     print('[label] label: {}'.format(label))
-#     # convert the label to one-hot encoding
-#     one_hot = tf.one_hot(label, NUM_CLASSES)
-
-#     # read the img from file
-#     img_file = tf.read_file(img_path)
-#     img_decoded = tf.image.decode_image(img_file, channels=3)
-#     img_decoded.set_shape([None, None, None])
-#     # img_decoded = tf.image.resize_images(img_decoded, [28, 28])
-#     img_decoded = tf.image.resize_images(img_decoded, [100, 100])
-#     return img_decoded, one_hot
+batch_size = 2
 
 
 def read_image(path):
@@ -52,7 +37,6 @@ def get_list(im_path, label_path):
     a = [label.split('.')[0] for label in label_list]
     label = [_a.split('/')[2] for _a in a]
     label = np.array(label).astype(np.uint8)
-    print('label list: {}'.format(label))
     return image_list, label
 
 
@@ -61,10 +45,10 @@ def main():
     print('Image List: {}'.format(image_list))
     print('Label List: {}'.format(label_list))
 
+    # Create tf.data.Dataset Instance
     dataset = tf.data.Dataset.from_tensor_slices((image_list, label_list))
 
-    batch_size = 2
-
+    # Feed in custom generator via tf.py_func()
     dataset = dataset.map(
         lambda image_list, label_list: tuple(tf.py_func(_read_py_function, [image_list, label_list], [tf.int32, tf.uint8])))
 
@@ -72,46 +56,35 @@ def main():
         dataset = dataset.map(_resize_function)
 
     if num_epoch == 0:
-        print('# epoch: Indefinite')
-        dataset = dataset.repeat()
+        dataset = dataset.repeat()  # repeat forever
     else:
-        print('# epoch: {}'.format(num_epoch))
         dataset = dataset.repeat(num_epoch)
 
     if shuffle:
         dataset = dataset.shuffle(buffer_size=(
             int(len(image_list) * 0.4) + 3 * batch_size))
 
+    # transform tf.data.Dataset Instance
     dataset = dataset.batch(batch_size)
 
-    # Iterator Set up
+    # Create Iterator
     iterator = dataset.make_initializable_iterator()
     image_stacked, label_stacked = iterator.get_next()
-    print('image_stacked.shape: {}'.format(image_stacked.shape))
-    print('label_stacked.shape: {}'.format(label_stacked.shape))
 
-    cnt = 0
     with tf.Session() as sess:
 
         sess.run(iterator.initializer)
         while True:
-            # sess.run(iterator.initializer)
-            cnt += 1
             try:
                 image, label = sess.run([image_stacked, label_stacked])
-                # print('[{}]: {}'.format(cnt, tf.shape(image)))
 
                 image = image.astype(int)  # Convert to integer type
                 jpeg_image = np.squeeze(image)
-                print('[batch:{}] label: {} (#lables: {})'.format(
-                    cnt, label, len(label)))
 
+                # display image for debug
                 for im in jpeg_image:
-                    print('Image Size: {}x{}'.format(im.shape[0], im.shape[1]))
                     plt.imshow(im)
                     plt.show()
-
-                print('{}th batch job done...'.format(cnt))
 
             except tf.errors.OutOfRangeError:
                 print("End of training dataset.")

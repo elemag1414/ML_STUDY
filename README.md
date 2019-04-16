@@ -9,3 +9,7 @@
 ### [Python](https://github.com/elemag1414/ML_STUDY/blob/master/Python/README.md)
 
 ### [VSCode](https://github.com/elemag1414/ML_STUDY/blob/master/VSCode/README.md)
+
+### Extra Tips:
+
+####

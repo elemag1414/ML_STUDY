@@ -59,6 +59,9 @@ TFRecord 사용하는 방법은 [여기]를 참조하고, 본 post는 **디스�
 
 `tf.data.Dataset.from_generator()`는 사용자가 정의하는 generator method를 통해 입력 flow를 생성한다고 하지만, `tf.data.Dataset.from_tensor_slice()` 방식도 사용자가 generator method를 정의하고 이를 tf.py_func()를 통해 연결하면 둘의 차이점이 애매해진다.
 
+> 참고로 데이터 불러오는 방법은 generator를 사용하는 방법 이외에도 numpy, tensor, placeholder를 이용한 다앙향 방식이 있다. 다음을 참고한다.
+> [[다음]](https://cyc1am3n.github.io/2018/09/13/how-to-use-dataset-in-tensorflow.html)
+
 <br>
 
 ---
@@ -100,7 +103,7 @@ label_path = 'dataset/labels/'
 
 ```python
 resize = True
-num_epoch = 1
+num_epoch = 1   # 0 for repeat forever
 shuffle = True
 batch_size = 2
 ```
@@ -131,7 +134,6 @@ def get_list(im_path, label_path):
     a = [label.split('.')[0] for label in label_list]
     label = [_a.split('/')[2] for _a in a]
     label = np.array(label).astype(np.uint8)
-    print('label list: {}'.format(label))
     return image_list, label
 ```
 
@@ -155,10 +157,8 @@ def main():
         dataset = dataset.map(_resize_function)
 
     if num_epoch == 0:
-        print('# epoch: Indefinite')
-        dataset = dataset.repeat()
+        dataset = dataset.repeat() # repeat indefinately
     else:
-        print('# epoch: {}'.format(num_epoch))
         dataset = dataset.repeat(num_epoch)
 
     if shuffle:
@@ -171,8 +171,6 @@ def main():
     # Iterator 생성 (아래 Iterator 참조)
     iterator = dataset.make_initializable_iterator()
     image_stacked, label_stacked = iterator.get_next()
-    print('image_stacked.shape: {}'.format(image_stacked.shape))
-    print('label_stacked.shape: {}'.format(label_stacked.shape))
 
     cnt = 0
     with tf.Session() as sess:
@@ -186,15 +184,12 @@ def main():
 
                 image = image.astype(int)  # Convert to integer type
                 jpeg_image = np.squeeze(image)
-                print('[batch:{}] label: {} (#lables: {})'.format(
-                    cnt, label, len(label)))
 
+                # Plot Image for debug
                 for im in jpeg_image:
                     print('Image Size: {}x{}'.format(im.shape[0], im.shape[1]))
                     plt.imshow(im)
                     plt.show()
-
-                print('{}th batch job done...'.format(cnt))
 
             except tf.errors.OutOfRangeError:
                 print("End of training dataset.")
@@ -229,6 +224,15 @@ Transformation과 Iterator 생성은 다음을 참조한다.
 [[Datasets 변환(transformation)하기]](tf_transformation.md)
 
 [[Iterator 생성하기]](tf_iterator.md)
+
+> 참고로 [여기](https://kratzert.github.io/2017/06/15/example-of-tensorflows-new-input-pipeline.html)에서는 Tensorflow Dataset pipeline을 사용한 경우와 OpenCV를 이용한 기존 pipeline 방식과의 속도 비교를 보여준다. (해당 링크의 Performance comparison 부분 참조)
+
+---
+
+TO-DOs:
+상기 방식은 동일한 image사이즈에 적용된다.
+Image size가 동적으로 변하면 이를 처리할 방법을 찾아야 한다..
+[[Tensorflow input dataset with varying size images]](https://stackoverflow.com/questions/51983716/tensorflow-input-dataset-with-varying-size-images)
 
 ---
 
