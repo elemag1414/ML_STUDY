@@ -1,5 +1,7 @@
 # tf.data로 input pipeline 만들기 예제
 
+[출처](https://medium.com/trackin-datalabs/input-data-tf-data-%EC%9C%BC%EB%A1%9C-batch-%EB%A7%8C%EB%93%A4%EA%B8%B0-1c96f17c3696)
+
 일반적인 input data 생성 순서는 다음과 같다:
 
 1. 데이터의 경로를 찾는다.
