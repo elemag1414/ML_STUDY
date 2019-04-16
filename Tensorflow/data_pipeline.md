@@ -217,7 +217,19 @@ if __name__ == "__main__":
 
 ---
 
+# Transformation과 Iterator
+
+`tf.data.Dataset` 인스턴스가 생성되며,
+transformation을 사용하여 shuffle, batch등의 작업을 설정할 수 있다.
+
+이렇게 dataset flow path가 준비되면,
+Iterator를 통해 tf.Session()에 input data를 하나씩 넣어주면 된다.
+
+Transformation과 Iterator 생성은 다음을 참조한다.
 [[Datasets 변환(transformation)하기]](tf_transformation.md)
+
 [[Iterator 생성하기]](tf_iterator.md)
+
+---
 
 ##### [[Tensorflow로 돌아가기]](https://github.com/elemag1414/ML_STUDY/tree/master/Tensorflow)|[[ML_STUDY로 돌아기기]](https://github.com/elemag1414/ML_STUDY)
