@@ -77,10 +77,9 @@ dataset2: <TensorSliceDataset shapes: (10,), types: tf.float32>
 dataset1은 생성된 sample 텐서를 모두 저장하고 있고,
 dataset2은 생성된 sample 텐서를 slice해서 저장하고 있다.
 
-`python tf.data.Datasets` 객체는 **tf.data.Dataset.from_tensor()** 또는 **tf.data.Dataset.from_tensor_slices()** 를 사용하여 생성되며, 객체의 element들은 동일한 구조로 구성된다.
+`tf.data.Datasets` 객체는 `tf.data.Dataset.from_tensor()` 또는 `tf.data.Dataset.from_tensor_slices()` 를 사용하여 생성되며, 객체의 element들은 동일한 구조로 구성된다.
 
-각 element들은 tf.Tensor 형태이며 element 유형을 나타내는 tf.DType과 모양을 나타내는
-tf.TensorShape로 구성된다.
+각 element들은 `tf.Tensor` 형태이며 element 유형을 나타내는 `tf.DType`과 모양을 나타내는 `tf.TensorShape`로 구성된다.
 
 <br>
 
