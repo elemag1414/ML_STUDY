@@ -172,7 +172,6 @@ def main():
     iterator = dataset.make_initializable_iterator()
     image_stacked, label_stacked = iterator.get_next()
 
-    cnt = 0
     with tf.Session() as sess:
 
         sess.run(iterator.initializer)
@@ -221,6 +220,7 @@ transformation을 사용하여 shuffle, batch등의 작업을 설정할 수 있�
 Iterator를 통해 tf.Session()에 input data를 하나씩 넣어주면 된다.
 
 Transformation과 Iterator 생성은 다음을 참조한다.
+
 [[Datasets 변환(transformation)하기]](tf_transformation.md)
 
 [[Iterator 생성하기]](tf_iterator.md)
@@ -229,9 +229,11 @@ Transformation과 Iterator 생성은 다음을 참조한다.
 
 ---
 
-TO-DOs:
+<TO-DOs:>
+
 상기 방식은 동일한 image사이즈에 적용된다.
-Image size가 동적으로 변하면 이를 처리할 방법을 찾아야 한다..
+Image size가 동적으로 변하면 이를 처리할 방법을 찾아야 한다.
+
 [[Tensorflow input dataset with varying size images]](https://stackoverflow.com/questions/51983716/tensorflow-input-dataset-with-varying-size-images)
 
 ---
