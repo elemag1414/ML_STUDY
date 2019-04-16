@@ -204,6 +204,8 @@ if __name__ == "__main__":
 
 <br>
 
+---
+
 # `tf.data.Dataset.from_generator()`를 사용하여 dataset 생성하기
 
 `tf.data.Dataset.from_generator()`를 사용하여 dataset를 생성하는 방법도 `tf.data.Dataset.from_tensor_slices()`를 사용하는 방법과 유사하다.
