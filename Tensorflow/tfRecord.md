@@ -23,7 +23,15 @@ serialize하여 하나의 파일로 관리하기 때문에 별도의 작업없�
 
 ## TFRecord 변환 (저장하기)
 
-image와 label을 serialize하여 저장
+image 정보와 label 정보로 부터 TFRecord를 생성하고 저장하는 절차는 다음과 같다.
+
+1. image 정보 (파일)와 label 정보를 TFRecord 형태로 변환
+2. TFRecord 형태로 변환된 serialized 정보를 파일로 저장
+
+1단계에서 TFRecord로 변환하기 위해 `tf.train.Example` api를 사용한다.
+2단계에서는 writer 객체를 생성해서 `tf.train.Example` 인스턴스를 파일로 저장한다.
+
+![구성도](TFRecord_Conversion.png)
 
 다음의 간략한 예제를 살펴보자
 
@@ -92,7 +100,9 @@ tensorflow feature 타입으로 변환하여 전달된다. 이는 `tf.train.Feat
 tfrecord 파일에 써주는 것이다.
 
 ```python
+# writer instance 생성
 writer = tf.python_io.TFRecordWriter('/dataset/tfrecords/000001.tfrecord')
+# TFRecord 파일 생성
 writer.write(tf_example.SerializeToString())
 ```
 
