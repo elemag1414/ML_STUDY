@@ -9,6 +9,7 @@
 
   > > [For Image Classification](https://github.com/elemag1414/ML_STUDY/blob/master/Tensorflow/data_pipeline.md) <br>
   > > For Object Detection: To be added
+  > > [Data Input Pipeline Performance](https://www.tensorflow.org/guide/performance/datasets)
 
 - [Input Data를 TFRecode format으로 변환하기](tfRecord.md)
 
@@ -16,9 +17,7 @@
 
 - Tensorflow APIs
 
-  > > [Estimator API](https://www.tensorflow.org/api_docs/python/tf/estimator) <br>
-  > > [Experiment API](https://www.tensorflow.org/api_docs/python/tf/experimental) <br>
-  > > [Train API](https://www.tensorflow.org/api_docs/python/tf/train) <br>
+  > > [Estimator API](https://www.tensorflow.org/api_docs/python/tf/estimator) <br> > > [Experiment API](https://www.tensorflow.org/api_docs/python/tf/experimental) <br> > > [Train API](https://www.tensorflow.org/api_docs/python/tf/train) <br>
   > >
   > > > see Train.Features also
 

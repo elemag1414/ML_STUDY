@@ -28,16 +28,16 @@ image 정보와 label 정보로 부터 TFRecord를 생성하고 저장하는 절
 1. image 정보 (파일)와 label 정보를 TFRecord 형태로 변환
 2. TFRecord 형태로 변환된 serialized 정보를 파일로 저장
 
-1단계에서 TFRecord로 변환하기 위해 `tf.train.Example` api를 사용한다.
+1단계에서 TFRecord로 변환하기 위해 `tf.train.Example` 클래스 인스턴스를 사용한다.
 2단계에서는 writer 객체를 생성해서 `tf.train.Example` 인스턴스를 파일로 저장한다.
 
 ![구성도](TFRecord_Conversion.png)
 
 다음의 간략한 예제를 살펴보자
 
-[[TFRecord 파일 생성 예제]]
+[TFRecord 파일 생성 예제:To-Do]
 
-[출처](https://digitalbourgeois.tistory.com/50)
+[예제 코드 출처](https://digitalbourgeois.tistory.com/50)
 
 ```python
 import tensorflow as tf
@@ -106,9 +106,57 @@ writer = tf.python_io.TFRecordWriter('/dataset/tfrecords/000001.tfrecord')
 writer.write(tf_example.SerializeToString())
 ```
 
-## TFRecord 데이터 불러오기
+## TFRecord 데이터 불러오기 [출처](https://www.tensorflow.org/tutorials/load_data/tf_records#reading_a_tfrecord_file)
 
-저장된 TFRecord 데이터를 불러오는 방법은 tf.data.TFRecordDataset(filename) api 사용
+저장된 TFRecord 데이터를 불러오는 방법은 `tf.data.TFRecordDataset` 클래스를 사용한다.
+
+```python
+filenames = ['/dataset/tfrecords/000001.tfrecord']
+raw_dataset = tf.data.TFRecordDataset(filenames)
+```
+
+`raw_dataset`는 `tf.train.Example` 인스턴스를 생성하게 된다.
+iterator를 사용하여 하나씩 불러들이면 scalar string tensor가 반환된다.
+
+`raw_dataset`로 부터 데이터를 불러 올때는 `.take` method를 사용한다.
+
+다음은 `.take` method를 사용하여 10개의 정보를 불러오는 예이다.
+
+```python
+for raw_record in raw_dataset.take(10):
+  print(repr(raw_record))
+```
+
+불러온 정보를 parsing하기 위해 `feature_description` dictionary를 정의해야 한다.
+
+다음은 parsing을 위해 `_parse_function()` method 예를 나타낸다. 예에서 보여지듯이,
+사용자는 `feature_description`를 정의해야 한다.
+
+```python
+# Create a description of the features.
+feature_description = {
+    'feature0': tf.FixedLenFeature([], tf.int64, default_value=0),
+    'feature1': tf.FixedLenFeature([], tf.int64, default_value=0),
+    'feature2': tf.FixedLenFeature([], tf.string, default_value=''),
+    'feature3': tf.FixedLenFeature([], tf.float32, default_value=0.0),
+}
+
+def _parse_function(example_proto):
+  # Parse the input tf.Example proto using the dictionary above.
+  return tf.parse_single_example(example_proto, feature_description)
+```
+
+이렇게 사용자가 정의한 parsing method는 `tf.data.Dataset`의
+`.map` method를 사용하여 읽어온 TFRecord룰 parsing한다.
+
+```python
+parsed_dataset = raw_dataset.map(_parse_function)
+parsed_dataset
+```
+
+```bash
+<MapDataset shapes: {feature3: (), feature0: (), feature1: (), feature2: ()}, types: {feature3: tf.float32, feature0: tf.int64, feature1: tf.int64, feature2: tf.string}>
+```
 
 TO-DOs:
 다음 정리할 것
