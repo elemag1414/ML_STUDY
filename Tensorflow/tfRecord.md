@@ -80,7 +80,7 @@ if __name__ == "__main__":
 예제에서는 height, width, 인코딩 포맷 (format), 이미지 바이너리 (encoded),
 레이블 (class/label)등의 feature 정보를 생성한다.
 
-생성된 feature 정보는 `tf.train.Features`객체를 이용하여,
+생성된 feature 정보는 [`tf.train.Features`](https://www.tensorflow.org/tutorials/load_data/tf_records#tfexample)객체를 이용하여,
 `tf.train.Example` 인스턴스에 `feature` 파라미터로 전달하게 되는데 다음과 같이
 dictionary 형태로 전달된다.
 
@@ -107,6 +107,10 @@ writer = tf.python_io.TFRecordWriter('/dataset/tfrecords/000001.tfrecord')
 # TFRecord 파일 생성
 writer.write(tf_example.SerializeToString())
 ```
+
+본 예제에서는 dump형태로 입력 데이터를 일괄 처리 하였는데,
+실제 구현시 [data pipeleine 구현](data_pipeline.md)에서 살펴본 바와같이, generator/iterator인 [`from_tensor_slices` 방식](https://www.tensorflow.org/tutorials/load_data/tf_records#writing_a_tfrecord_file)을 사용하여 배치형태로 구현하는게
+효율적이다.
 
 ---
 
