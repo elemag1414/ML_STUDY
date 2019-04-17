@@ -21,6 +21,8 @@ serialize하여 하나의 파일로 관리하기 때문에 별도의 작업없�
 마지막으로, 이미지 파일을 원본으로 관리하게 되면 파일 크기가 매우 커서 image dataset 자체가
 차지하는 용량이 꽤 된다. TFRecord는 변환시에 이러한 파일 크기를 줄여주는 장점도 있다.
 
+---
+
 ## TFRecord 변환 (저장하기)
 
 image 정보와 label 정보로 부터 TFRecord를 생성하고 저장하는 절차는 다음과 같다.
@@ -106,7 +108,9 @@ writer = tf.python_io.TFRecordWriter('/dataset/tfrecords/000001.tfrecord')
 writer.write(tf_example.SerializeToString())
 ```
 
-## TFRecord 데이터 불러오기 [출처](https://www.tensorflow.org/tutorials/load_data/tf_records#reading_a_tfrecord_file)
+---
+
+## TFRecord 데이터 불러오기 [[출처]](https://www.tensorflow.org/tutorials/load_data/tf_records#reading_a_tfrecord_file)
 
 저장된 TFRecord 데이터를 불러오는 방법은 `tf.data.TFRecordDataset` 클래스를 사용한다.
 
@@ -147,7 +151,7 @@ def _parse_function(example_proto):
 ```
 
 이렇게 사용자가 정의한 parsing method는 `tf.data.Dataset`의
-`.map` method를 사용하여 읽어온 TFRecord룰 parsing한다.
+`.map` method를 사용하여 읽어온 TFRecord를 parsing한다.
 
 ```python
 parsed_dataset = raw_dataset.map(_parse_function)
@@ -157,6 +161,8 @@ parsed_dataset
 ```bash
 <MapDataset shapes: {feature3: (), feature0: (), feature1: (), feature2: ()}, types: {feature3: tf.float32, feature0: tf.int64, feature1: tf.int64, feature2: tf.string}>
 ```
+
+TFRecord로 변화해 저장하고 다시 불러들여 확인하는 전체 예제는 [[여기]](https://www.tensorflow.org/tutorials/load_data/tf_records#walkthrough_readingwriting_image_data)를 참조한다.
 
 TO-DOs:
 다음 정리할 것
