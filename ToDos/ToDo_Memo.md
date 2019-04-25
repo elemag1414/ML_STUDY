@@ -3,9 +3,9 @@
 ## Drone
 
 - RetinaNet Keras 코드 분석
-  > 코드 분석
+  > [코드](https://github.com/fizyr/keras-retinanet) 분석
   > Training 방법 검토
-  > Anchor Box 변경 (블로그 참조)
+  > Anchor Box 변경 ([블로그](https://towardsdatascience.com/pedestrian-detection-in-aerial-images-using-retinanet-9053e8a72c6) 참조)
 - Focal Loss 분석
 
 ## LPWA
