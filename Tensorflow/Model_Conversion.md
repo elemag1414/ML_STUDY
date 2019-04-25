@@ -54,17 +54,17 @@ def freeze_session(session, keep_var_names=None, output_names=None, clear_device
 
 여기서,
 
-> freeze_session()의
+> `freeze_session()`의
 >
-> > session: TF session object
+> > `session`: TF session object
 
-> > keep_var_names: 일부 varable이 frozen (예를 들어 stateful 모델)되지 않기를 원한다면 True설정.
+> > `keep_var_names`: 일부 varable이 frozen (예를 들어 stateful 모델)되지 않기를 원한다면 `True`로 설정.
 
-> > output_names: output으로 생성되기를 바라는 operation의 이름들을 element로 갖는 list.
+> > `output_names`: output으로 생성되기를 바라는 operation의 이름들을 element로 갖는 list.
 
-> > clear_devices: graph를 좀 더 portable하게 생성하기 위해 device directives를 제거 할때 True로 설정.
+> > `clear_devices`: graph를 좀 더 portable하게 생성하기 위해 device directives를 제거 할때 `True`로 설정.
 
-이후, Keras 모델 model을 freeze_session()을 이용하여 tensorflow graph (frozen_graph)로 생성해준다.
+이후, Keras 모델 model을 `freeze_session()`을 이용하여 tensorflow graph (`frozen_graph`)로 생성해준다.
 
 ```python
 from keras import backend as K
@@ -75,8 +75,8 @@ frozen_graph = freeze_session(K.get_session(),
                               output_names=[out.op.name for out in model.outputs])
 ```
 
-frozen_graph는 tensorflow graph 이며,
-이제 tf.train.write_graph()를 사용하여 pb format으로 저장해준다.
+`frozen_graph`는 tensorflow graph 이며,
+이제 `tf.train.write_graph()`를 사용하여 pb format으로 저장해준다.
 
 ```python
 tf.train.write_graph(frozen_graph, "some_directory", "my_model.pb", as_text=False)
