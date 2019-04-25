@@ -10,6 +10,6 @@
 
 ## ETC
 
-- [tf.keras에서 Tensorboard 사용하기](keras_tensorbord.md)
+- [tf.keras에서 Tensorboard 사용하기](keras_tensorboard.md)
 
 ##### [[ML_STUDY로 돌아기기]](https://github.com/elemag1414/ML_STUDY)
