@@ -8,4 +8,8 @@
 - [Model 저장/불러오기](https://github.com/elemag1414/ML_STUDY/blob/master/Keras/Model_Save_Load.md)
 - [Trained Model 변환하기](https://github.com/elemag1414/ML_STUDY/blob/master/Tensorflow/Model_Conversion.md)
 
+## ETC
+
+- [tf.keras에서 Tensorboard 사용하기](keras_tensorbord.md)
+
 ##### [[ML_STUDY로 돌아기기]](https://github.com/elemag1414/ML_STUDY)
