@@ -141,4 +141,4 @@ print("{} : {:%.2f}".format(model.metrics_names[1], score[1]*100))
 
 - [h5py: Python에서 HDF5 파일 읽고 쓰기](https://www.christopherlovell.co.uk/blog/2016/04/27/h5py-intro.html)
 
-##### [[Keras로 돌아기기]](https://github.com/elemag1414/Keras)|[[ML_STUDY로 돌아기기]](https://github.com/elemag1414/ML_STUDY)
+##### [[Keras로 돌아기기]](README.md)|[[ML_STUDY로 돌아기기]](https://github.com/elemag1414/ML_STUDY)
