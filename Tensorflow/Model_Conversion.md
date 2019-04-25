@@ -95,7 +95,7 @@ ckpt의 weight를 생성된 keras 모델에 layer별로 load하는 방식인것 
 tf VGG16 pretrained 모델로부터 keras VGG16 모델로 변환하는 경우를 생각해보자.
 
 우선, keras로 VGG16 모델을 만들어
-keras의 layer.load_weights(weights)를 통해 ckpt의 weights를 load 한다.
+keras의 `layer.load_weights(weights)`를 통해 ckpt의 weights를 load 한다.
 
 언급한대로, 전혀 편한 방법은 아닌듯 싶다.
 
