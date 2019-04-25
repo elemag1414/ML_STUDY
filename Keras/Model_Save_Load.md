@@ -11,7 +11,7 @@ ML Model은 대부분 Architecture와 Weights로 구성되며,
 Keras는 ML 모델을 저장과 불러오는 방법으로 다음 2가지의 방식이 있다.<br>
 
 - Option 1. Model 전체 (.h5)를 저장 및 불러오기 <br>
-- Option 2. Weights(.h5)와 Model Architecture (.json)으로 저장 및 불러오기 <br>
+- Option 2. Model의 Weights(.h5)와 Model Architecture (.json)를 따로 저장 및 불러오기 <br>
   할 수 있다. <br>
 
 ---
@@ -19,7 +19,7 @@ Keras는 ML 모델을 저장과 불러오는 방법으로 다음 2가지의 방�
 ### 저장하기
 
 0. 가정
-   `model` object는 `keras.Sequential`로 이미 생성되어 가정한다.
+   ML 모델 `model` object는 `keras.Sequential`로 이미 생성되어 가정한다.
 
 #### Keras 모델 전체 저장하기
 
@@ -27,13 +27,14 @@ Keras는 ML 모델을 저장과 불러오는 방법으로 다음 2가지의 방�
 model.save('model_keras.h5')
 ```
 
-`model.save()' method는 keras로 생성된 모델 전체를 저장하며,
+`model.save()` method는 keras로 생성된 모델 전체를 저장하며,
 구체적으로 다음을 저장한다.
 
 - The architecture of the model allowing to re-create the model
 - The weights of the model
 - The training configuration (loss, optimizer)
 - The state of the optimizer allowing to resume training exactly where you left off.
+
   주: pickle 혹은 cPickle을 사용하여 keras model을 저장하는 방법은 권장하지 않는다.
 
 #### Weights와 Architecture 따로 저장하기
@@ -70,6 +71,8 @@ model.get_weights()
 model.optimizer
 ```
 
+<br>
+
 #### Weights와 Architecture 따로 불러오기
 
 > Architecture만 불러오기
@@ -85,6 +88,8 @@ with open('model_architecture.json', 'r') as f:
 ```
 
 > > 불러온 architecture는 `.summary()`를 통해 확인할 수 있다.
+
+<br>
 
 > Weights만 불러오기
 >
