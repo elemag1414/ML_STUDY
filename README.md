@@ -4,7 +4,7 @@
 
 ## ML Models
 
-To be Added
+### [Resnet](https://github.com/elemag1414/ML_STUDY/blob/master/ML_Models/ResNet.md)
 
 ---
 
