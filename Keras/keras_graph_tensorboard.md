@@ -21,7 +21,8 @@ h5 파일을 pb파일로 변환한 후 이를 텐서보드 log를 생성하는 �
 python Generate_Graph_from_h5.py --model_dir modelpath/h5model.h5 --log_dir ./log
 ```
 
-여기서
+여기서,
+
 `--model_dir` h5 파일 위치 option
 
 `--log_dir` 텐서보드 로그가 생성될 path
