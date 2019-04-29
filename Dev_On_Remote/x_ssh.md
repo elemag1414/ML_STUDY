@@ -6,7 +6,7 @@
 - X11 Forwarding 설정
 
   > `/etc/ssh/sshd_config`파일의 `X11Forwarding` 설정을 `yes`로 변경한다.
-
+  >
   > 맨 처음 사용시 해당 설정이 comment처리 되어있을 것이다.
 
 ## Basic Connection 설정
@@ -28,9 +28,9 @@ $ ssh -X sever_account@xxx.xxx.xxx.xxx
 > PyCharm에서 X11 어플 열기
 >
 > > open a ssh session that support X11 display(remember to keep this session)
-
+> >
 > > `run echo \$DISPLAY` in that ssh session
-
+> >
 > > set `DISPLAY` environment variable for your PyCharm
 
-##### [Remote 서버를 통한 개발](Dev_On_Remote.md) | [[ML_STUDY로 돌아기기]](https://github.com/elemag1414/ML_STUDY)
+##### [[Remote 서버를 통한 개발]](Dev_On_Remote.md) | [[ML_STUDY로 돌아기기]](https://github.com/elemag1414/ML_STUDY)
