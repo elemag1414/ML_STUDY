@@ -27,3 +27,5 @@ Visualizations of network structures (tools from [ethereon](http://ethereon.gith
 ## Deep Residual Networks Implementation
 
 Visit [Kaiming He's Git](https://github.com/KaimingHe/deep-residual-networks)
+
+##### [[ML_STUDY로 돌아기기]](https://github.com/elemag1414/ML_STUDY)
