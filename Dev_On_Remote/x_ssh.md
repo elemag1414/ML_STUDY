@@ -18,6 +18,11 @@ $ xhost +
 ```
 
 해당 설정을 하면, 클라이언트가 모든 host로부터 x 연결을 허용한다.
+설정이 제대로 되었다면, 화면에 다음 메시지가 출력된다.
+
+```bash
+access control disabled, clients can connect from any host
+```
 
 - x 를 통한 ssh 연결
 
