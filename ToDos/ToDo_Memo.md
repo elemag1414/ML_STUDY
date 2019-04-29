@@ -9,7 +9,7 @@
   >
   > > 모델 불러오기 시점에 RetinaNet weight가 모델의 어느부분까지 load되는지 확인
 
-- [x] 과제 업무회의
+- [x] 과제 GPU Server 검수
 
 ## LPWA
 
