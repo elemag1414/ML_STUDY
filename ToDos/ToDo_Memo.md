@@ -1,3 +1,28 @@
+# 2019-04-29
+
+## Drone
+
+- RetinaNet Keras 코드 분석
+
+  > [코드](https://github.com/fizyr/keras-retinanet) 분석
+  > 모델 생성시 Backbone과 interference 부분 생성 시점 확인
+  >
+  > > 모델 불러오기 시점에 RetinaNet weight가 모델의 어느부분까지 load되는지 확인
+
+- [x] 과제 업무회의
+
+## LPWA
+
+- 발표자료: 기술의 우수성 부분 작성중
+
+## etc
+
+- [x] h5 file Tensor board로 확인하기
+- [ ] Hog Feature Study
+- [ ] Layer Output Visualization (ToDo: Check out the layer output of consecutive frames)
+
+---
+
 # 2019-04-26
 
 ## Drone
