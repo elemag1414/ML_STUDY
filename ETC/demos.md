@@ -8,6 +8,8 @@
 
   > [Keras-RetinaNet Implementation](https://github.com/fizyr/keras-retinanet) used as well.
 
+---
+
 ## Brief Cheat from the blog above
 
 ### Training Custom data set

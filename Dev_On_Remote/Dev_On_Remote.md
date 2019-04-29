@@ -6,6 +6,6 @@
 
 ## VSCode
 
-- [서버의 VSCode와 연동하기](Dev_On_Remote.md)
+- [서버의 VSCode와 연동하기](https://www.youtube.com/watch?v=bl4tivz7kpo&t=3s)
 
 ##### [[ML_STUDY로 돌아기기]](https://github.com/elemag1414/ML_STUDY)
