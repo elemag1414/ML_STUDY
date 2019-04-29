@@ -25,6 +25,13 @@ $ xhost +
 $ ssh -X sever_account@xxx.xxx.xxx.xxx
 ```
 
+> > 만약 위의 설정 후에도 graphic contents 창이 열리지 않는 display error가 발생하면,
+> > `DISPLAY` 환경 변수를 설정해 준다.
+
+```bash
+export DISPLAY="127.0.0.1:10.0"
+```
+
 > PyCharm에서 X11 어플 열기
 >
 > > open a ssh session that support X11 display(remember to keep this session)
