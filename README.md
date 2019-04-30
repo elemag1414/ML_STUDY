@@ -24,6 +24,8 @@
 
 #### [Remote 서버를 통한 개발](Dev_On_Remote/Dev_On_Remote.md)
 
+#### [RetinaNet을 이용한 항공 이미지 데이터에서 보행자 검출 데모](ETC/demos.md)
+
 #### [Simple Tips for .md](https://help.github.com/en/articles/basic-writing-and-formatting-syntax)
 
-#### [RetinaNet을 이용한 항공 이미지 데이터에서 보행자 검출 데모](ETC/demos.md)
+#### [ETC](ETC/README.md)

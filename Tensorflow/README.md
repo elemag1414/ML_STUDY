@@ -31,4 +31,8 @@
 
 - [Tensorflow가 GPU를 사용하는지 확인하기](../Keras/keras_gpu.md)
 
+```bash
+$ pip3 install --upgrade tensorflow-gpu
+```
+
 ##### [[ML_STUDY로 돌아기기]](https://github.com/elemag1414/ML_STUDY)
