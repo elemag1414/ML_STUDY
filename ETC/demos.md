@@ -1,8 +1,12 @@
 # Demos seemed to be interesting
 
-- [Pedestrian Detection in Aerial Images using RetinaNet](https://www.youtube.com/watch?v=KXBknhy_kjw)
+- [Pedestrian Detection in Aerial Images using RetinaNet::: YouTube Demo](https://www.youtube.com/watch?v=KXBknhy_kjw)
 
   > [GitHub](https://github.com/priya-dwivedi/aerial_pedestrian_detection)
+
+  > [TowardsDataScience](https://towardsdatascience.com/pedestrian-detection-in-aerial-images-using-retinanet-9053e8a72c6)
+
+  > > Note that the Author's Dataset link in GiHub is broken. Use the [google drive link](https://drive.google.com/drive/u/0/folders/1QpE_iRDq1hUzYNBXSBSnmfe6SgTYE3J4) in the DataScience blog instead.
 
   > [Standford Aerial Dataset(69G)](http://vatic2.stanford.edu/stanford_campus_dataset.zip) used in the project.
 
@@ -10,7 +14,7 @@
 
 ---
 
-## Brief Cheat from the blog above
+## Brief Cheat from the [blog](https://towardsdatascience.com/pedestrian-detection-in-aerial-images-using-retinanet-9053e8a72c6)
 
 ### Training Custom data set
 

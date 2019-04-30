@@ -22,6 +22,13 @@
   > > > see Train.Features also
 
 - [Model 저장/불러오기](https://github.com/elemag1414/ML_STUDY/blob/master/Tensorflow/Model_Save_Load.md)
+
 - [Trained Model 변환하기](https://github.com/elemag1414/ML_STUDY/blob/master/Tensorflow/Model_Conversion.md)
+
+---
+
+## ETC
+
+- [Tensorflow가 GPU를 사용하는지 확인하기](../Keras/keras_gpu.md)
 
 ##### [[ML_STUDY로 돌아기기]](https://github.com/elemag1414/ML_STUDY)
