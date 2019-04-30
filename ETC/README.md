@@ -1,7 +1,8 @@
 # ETC
 
 - [Ubuntu Version 확인하기](#ubuntu-version-확인하기)
-- [Ubuntu 사용자 추가](#사용자-추가)
+- [Ubuntu 사용자 추가하기](#사용자-추가하기)
+- [SCP로 파일 전송하기](#scp-file-전송)
 
 ## Ubuntu
 
@@ -11,7 +12,7 @@
 $ cat /etc/issue
 ```
 
-### 사용자 추가
+### 사용자 추가하기
 
 ```bash
 $ # 새로운 사용자 (new_user_account)를 추가
@@ -31,5 +32,44 @@ $ sudo usermod -d /var/devgroup/new_user_account user
 ```
 
 `useradd`로 사용자를 추가하면 계정만 생성해주며 기타 계정 정보등을 수동으로 생성 및 설정해야 한다.
+
+### SCP file 전송
+
+```bash
+$ # upload local file local_dir/a.file to remote server
+$ scp local_dir/a.file user@host.com:~/remote_dir/
+
+$ # upload folder local_dir to remote server::: use -r option
+$ scp -r local_dir/* user@host.com:~/remote_dir
+```
+
+### GPU monitor하기
+
+```bash
+$ nvidia-smi
+Tue Apr 30 12:33:04 2019
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 418.56       Driver Version: 418.56       CUDA Version: 10.1     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|===============================+======================+======================|
+|   0  TITAN V             Off  | 00000000:21:00.0 Off |                  N/A |
+| 46%   64C    P2   133W / 250W |   8944MiB / 12036MiB |     66%      Default |
++-------------------------------+----------------------+----------------------+
+|   1  TITAN V             Off  | 00000000:23:00.0 Off |                  N/A |
+| 28%   37C    P8    25W / 250W |    318MiB / 12036MiB |      0%      Default |
++-------------------------------+----------------------+----------------------+
+
++-----------------------------------------------------------------------------+
+| Processes:                                                       GPU Memory |
+|  GPU       PID   Type   Process name                             Usage      |
+|=============================================================================|
+|    0     29720      C   python3                                     8933MiB |
+|    1     29720      C   python3                                      307MiB |
++-----------------------------------------------------------------------------+
+
+
+```
 
 ##### [[ML_STUDY로 돌아기기]](https://github.com/elemag1414/ML_STUDY)
