@@ -32,3 +32,5 @@ K.tensorflow_backend._get_available_gpus()
 
 ['/gpu:0']
 ```
+
+##### [[Keras로 돌아가기]](README.md) | [[Tensorflow로 돌아가기]](../Tensorflow/README.md) | [[ML_STUDY로 돌아기기]](https://github.com/elemag1414/ML_STUDY)
