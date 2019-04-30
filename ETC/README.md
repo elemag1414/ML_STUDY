@@ -3,6 +3,7 @@
 - [Ubuntu Version 확인하기](#ubuntu-version-확인하기)
 - [Ubuntu 사용자 추가하기](#사용자-추가하기)
 - [SCP로 파일 전송하기](#scp-file-전송)
+- [GPU monitor하기](#GPU-monitor하기)
 
 ## Ubuntu
 
