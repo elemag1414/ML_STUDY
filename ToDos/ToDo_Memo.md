@@ -1,3 +1,46 @@
+# 2019-05-01
+
+## Drone
+
+- RetinaNet Keras 코드 분석
+
+  > [코드](https://github.com/fizyr/keras-retinanet) 분석
+
+- 과제 GPU Server에서 Aerail Images에서 RetinaNet을 이용한 소형 물체 검출 모델 학습
+  > 5/10 오후 6:15에 Epoch 46/50 학습 진행 확인 (loss:0.126, r_loss:0.12, c_loss:0.0071)
+
+## etc
+
+- [x] 시험용 Drone dataset annotion 작업 (약 20장) / RectLabel 툴을 사용 (14일 한정판)
+- [x] 생성 annotation을 dataset에서 눈으로 검증하는 루틴 작성
+- [x] RectLabel에서 생성한 xml 라벨 파일을 parsing하여 xml keras-retinanet 모델 학습에 사용할 수 있도록 csv 생성 코드 작성
+- [x] HD 사이즈 이상 큰 이미지 HD로 변경 루틴 작성
+- [ ] Layer Output Visualization (ToDo: Check out the layer output of consecutive frames)
+
+---
+
+# 2019-04-30
+
+## Drone
+
+- RetinaNet Keras 코드 분석
+
+  > [코드](https://github.com/fizyr/keras-retinanet) 분석
+
+- [x] 과제 GPU Server에서 Aerail Images에서 RetinaNet을 이용한 소형 물체 검출 모델 학습 (30일 오후 2시쯤 시작)
+- [x] 과제 특허 권리 분석 kick-off 참석
+
+## LPWA
+
+- 발표자료: 기술의 우수성 부분 작성중
+
+## etc
+
+- [ ] Hog Feature Study
+- [ ] Layer Output Visualization (ToDo: Check out the layer output of consecutive frames)
+
+---
+
 # 2019-04-29
 
 ## Drone
