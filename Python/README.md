@@ -8,6 +8,7 @@
 
 ## ETC
 
+- [OS module](os_module.md)
 - [tqdm으로 Progress bar 사용하기](https://www.youtube.com/watch?v=qVHM3ly-Amg)
   > pip install tdqm
 

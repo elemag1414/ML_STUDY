@@ -4,6 +4,7 @@
 - [Ubuntu 사용자 추가하기](#사용자-추가하기)
 - [SCP로 파일 전송하기](#scp-file-전송)
 - [GPU monitor하기](#GPU-monitor하기)
+- [file 사이즈 확인하기](#file-사이즈-확인하기)
 
 ## Ubuntu
 
@@ -69,8 +70,14 @@ Tue Apr 30 12:33:04 2019
 |    0     29720      C   python3                                     8933MiB |
 |    1     29720      C   python3                                      307MiB |
 +-----------------------------------------------------------------------------+
+```
 
+### file 사이즈 확인하기
 
+> h 옵션 사용
+
+```bash
+$ ls -lah
 ```
 
 ##### [[ML_STUDY로 돌아기기]](https://github.com/elemag1414/ML_STUDY)

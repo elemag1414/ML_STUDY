@@ -1,4 +1,4 @@
-# Demos seemed to be interesting
+# RetinaNet을 이용한 보행자 (small object) 검출 데모 (스탠포드 항공 이미지 데이터세트 사용)
 
 - [Pedestrian Detection in Aerial Images using RetinaNet::: YouTube Demo](https://www.youtube.com/watch?v=KXBknhy_kjw)
 
