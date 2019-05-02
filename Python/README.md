@@ -5,6 +5,7 @@
 - Special (dunder) method
 - Import custom package (다른 경로에 존재하는 모듈 불러오기)
 - Cython으로 Processing 속도 올리기
+- [Anaconda 가상환경 관리](anaconda_virtenv.md)
 
 ## ETC
 
