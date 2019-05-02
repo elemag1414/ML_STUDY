@@ -41,35 +41,25 @@ MacOS의 경우, Python이나 Qt 버전 문제로 설치에 어려움이 있는 
    \$ python setup.py py2app
 
 #5. move app to Applications folder
-   \$ mv "dist/labelImg.app" /Applications
+   \$ mv "dist/labelImg.app" /ApplicationsPqflx
 
 ```
 
 ### Hotkeys
 
-| Ctrl + u     | Load all of the images from a directory      |
-| ------------ | -------------------------------------------- |
-| Ctrl + r     | Change the default annotation target dir     |
-| ------------ | -------------------------------------------- |
-| Ctrl + s     | Save                                         |
-| ------------ | -------------------------------------------- |
-| Ctrl + d     | Copy the current label and rect box          |
-| ------------ | -------------------------------------------- |
-| Space        | Flag the current image as verified           |
-| ------------ | -------------------------------------------- |
-| w            | Create a rect box                            |
-| ------------ | -------------------------------------------- |
-| d            | Next image                                   |
-| ------------ | -------------------------------------------- |
-| a            | Previous image                               |
-| ------------ | -------------------------------------------- |
-| del          | Delete the selected rect box                 |
-| ------------ | -------------------------------------------- |
-| Ctrl++       | Zoom in                                      |
-| ------------ | -------------------------------------------- |
-| Ctrl--       | Zoom out                                     |
-| ------------ | -------------------------------------------- |
-| ↑→↓←         | Keyboard arrows to move selected rect box    |
+| Ctrl + u | Load all of the images from a directory   |
+| -------- | ----------------------------------------- |
+| Ctrl + r | Change the default annotation target dir  |
+| Ctrl + s | Save                                      |
+| Ctrl + d | Copy the current label and rect box       |
+| Space    | Flag the current image as verified        |
+| w        | Create a rect box                         |
+| d        | Next image                                |
+| a        | Previous image                            |
+| del      | Delete the selected rect box              |
+| Ctrl++   | Zoom in                                   |
+| Ctrl--   | Zoom out                                  |
+| ↑→↓←     | Keyboard arrows to move selected rect box |
 
 ##. OpenCV CVAT
 초기에 주로 썼던 툴이다.
