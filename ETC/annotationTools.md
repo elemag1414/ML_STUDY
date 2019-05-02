@@ -61,18 +61,26 @@ MacOS의 경우, Python이나 Qt 버전 문제로 설치에 어려움이 있는 
 | Ctrl--   |                 Zoom out                  |
 | ↑→↓←     | Keyboard arrows to move selected rect box |
 
-##. OpenCV CVAT
-초기에 주로 썼던 툴이다.
+## OpenCV CVAT
 
-- GitHub: [[tzutalin/iabelImg]](https://github.com/tzutalin/labelImg)
-- YouTube: [[데모]](https://youtu.be/p0nR2YsCY_U)
+초기에 주로 썼던 툴이다.
+무료이고 세그멘테이션 annotation과 대략적인 비디오 annotation등 여러 annotation 모드를 지원한다는 장점이 있다.
+분명히 매우~ 강력한 툴이다. 하지만, bbox만을 주로 사용하기에는 이 툴이 약간 불편하다.
+docker를 써야하고, bbox 생성시 박스 그리는 GUI가 좀 불편하다든지...
+
+- GitHub: [[opencv/cvat]](https://github.com/opencv/cvat)
+- 온라인 데모: [[데모]](https://c.onepanel.io/onepanel-demo/projects/cvat-public-demo/workspaces)
+
+## RectLabel
+
+MacOS 환경에서 세그멘테이션이나 bbox annotation 툴로써 이보다 깔끔한 디자인과 편리한 툴은 없어 보인다.
+하지만, 한가지 아쉬움이자 함정은 유료라는 점.
+처음 구글링해서 이 툴 찾았을때, 블로거가 마치 무료인냥 적어놔서
+Appstore를 통해 설치 했더니,
+2주간 사용해보고 유료로 구매하란다. (안한다. ㅡㅡ;;)
+
+암턴 앱링크는 다음과 같다. 구경을 해보시던지... ㅎㅎ
+
+- App [Link](https://rectlabel.com/)
 
 ##### [[ML_STUDY로 돌아기기]](https://github.com/elemag1414/ML_STUDY)
-
-```
-
-```
-
-```
-
-```
