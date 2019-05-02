@@ -1,6 +1,8 @@
 # Object Detection Model 학습을 위한 Annotation Tools
 
-##. labelImg
+---
+
+## labelImg
 
 윈도우에서 많이들 사용하는것 같아서, MacOS를 사용하는 나로서는 별로 눈여겨 보지 않았지만,
 아래 OpenCV CVAT나 RectLabel을 사용하다가 발생하는 번거로움 때문에 이 툴로 옮겨 왔다.
@@ -61,6 +63,8 @@ MacOS의 경우, Python이나 Qt 버전 문제로 설치에 어려움이 있는 
 | Ctrl--   |                 Zoom out                  |
 | ↑→↓←     | Keyboard arrows to move selected rect box |
 
+---
+
 ## OpenCV CVAT
 
 초기에 주로 썼던 툴이다.
@@ -70,6 +74,8 @@ docker를 써야하고, bbox 생성시 박스 그리는 GUI가 좀 불편하다�
 
 - GitHub: [[opencv/cvat]](https://github.com/opencv/cvat)
 - 온라인 데모: [[데모]](https://c.onepanel.io/onepanel-demo/projects/cvat-public-demo/workspaces)
+
+---
 
 ## RectLabel
 
