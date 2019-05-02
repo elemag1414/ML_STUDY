@@ -16,3 +16,5 @@
 8. Predictions
 
 - [TMUX 사용하기](tmux.md)
+
+##### [[ML_STUDY로 돌아기기]](https://github.com/elemag1414/ML_STUDY)

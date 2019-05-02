@@ -44,3 +44,5 @@ $ tmux ls
 # 세션 다시 시작
 $ tmux attach -t <session-number or session-name>
 ```
+
+##### [[ML_STUDY로 돌아기기]](https://github.com/elemag1414/ML_STUDY)
