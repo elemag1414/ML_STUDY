@@ -1,3 +1,20 @@
+# 2019-05-02
+
+## Drone
+
+- Aerail Images에서 RetinaNet을 이용한 소형 물체 검출 (aerial_pedestrian_detection) 모델 코드 분석
+
+  > [코드](https://github.com/priya-dwivedi/aerial_pedestrian_detection) 분석
+
+## etc
+
+- [x] aerial_pedestrian_detection 모델 1차 학습 결과 분석
+  > > Epoch 50을 마친후, Eval 툴을 사용하여 성능 분석해보니, 성능이 알려진 내용보다 안 좋음. 또한, Eval시 오류 메시지 출력 (To-Do Issue: Debug 할것)
+- [x] `ImgLabel` Annotation Tool 설치 (MacOS에 설치시 오류 발생했으나 해결)
+- [ ] Layer Output Visualization (ToDo: Check out the layer output of consecutive frames)
+
+---
+
 # 2019-05-01
 
 ## Drone
