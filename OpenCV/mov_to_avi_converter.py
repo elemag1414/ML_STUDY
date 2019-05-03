@@ -121,3 +121,79 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+import cv2
+
+recordFlag = False
+
+
+def OpenRecDevice(outputfile, Width, Height):
+    fps = 20  # Frame Per Second
+    # For MacOS use MJPG and avi as extension, for Window use DIVX and avi as extension
+    fourcc = cv2.VideoWriter_fourcc(*"MJPG")
+    rec = cv2.VideoWriter(
+        outputfile, fourcc,
+        fps, (Width, Height)
+    )
+    return rec
+
+
+# Open Webcam resources
+im_file = ''
+rec_file = ''
+cap = cv2.VideoCapture(im_file)
+
+if (cap.isOpened() == False):
+    print("Error opening video clip")
+
+
+if recordFlag:
+    _, _image = cap.read()
+    width = _image.shape[1]
+    height = _image.shape[0]
+    rec = OpenRecDevice(rec_file, width, height)
+
+
+while True:
+
+    _, image = cap.read()
+
+    # image = cv2.UMat(_image) # for GPU Process
+
+    # Visualize Video
+    WINDOW_NAME = "Video"
+    OUTPUT_WIDTH = 640
+    OUTPUT_HEIGHT = 480
+    cv2.namedWindow(WINDOW_NAME, cv2.WINDOW_NORMAL)
+    cv2.resizeWindow(WINDOW_NAME, OUTPUT_WIDTH, OUTPUT_HEIGHT)
+    cv2.imshow(WINDOW_NAME, image)
+
+    # Save the results
+    if recordFlag:
+        rec.write(image)
+
+    # Keyboard interrupt
+    keyPressed = cv2.waitKey(5)
+
+    if keyPressed == 27 or keyPressed == 1048603:  # esc to escape
+        print("Quit")
+        break
+    elif keyPressed == 80 or keyPressed == 112:  # p to pause
+        print("Pause...")
+        while True:
+            cv2.imshow(WINDOW_NAME, image)
+            keyPressed = cv2.waitKey(5)
+            if keyPressed == 80 or keyPressed == 112:  # p to continue
+                print("Continue...")
+                break
+
+# release camera resources
+cap.release()
+
+# release recording resources
+if recordFlag:
+    rec.release()
+
+# Close all pop-up windows
+cv2.destroyAllWindows()
