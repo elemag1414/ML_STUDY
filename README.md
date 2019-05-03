@@ -18,6 +18,8 @@
 
 ### [VSCode](https://github.com/elemag1414/ML_STUDY/blob/master/VSCode/README.md)
 
+### [OpenCV](/OpenCV/README.md)
+
 ---
 
 ### Extra Tips:
