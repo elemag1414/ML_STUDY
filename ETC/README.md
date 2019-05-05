@@ -80,4 +80,6 @@ Tue Apr 30 12:33:04 2019
 $ ls -lah
 ```
 
+### [tmux사용하기](tmux.md)
+
 ##### [[ML_STUDY로 돌아기기]](https://github.com/elemag1414/ML_STUDY)

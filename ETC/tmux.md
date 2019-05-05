@@ -1,4 +1,4 @@
-# tmux
+# tmux 사용하기
 
 [[원본 블로그]](https://edykim.com/ko/post/tmux-introductory-series-summary/)
 
