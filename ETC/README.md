@@ -5,7 +5,7 @@
 - [SCP로 파일 전송하기](#scp-file-전송)
 - [GPU monitor하기](#GPU-monitor하기)
 - [file 사이즈 확인하기](#file-사이즈-확인하기)
-- [tmux사용하기](#[tmux사용하기])
+- [tmux사용하기](#tmux사용하기)
 
 ## Ubuntu
 
