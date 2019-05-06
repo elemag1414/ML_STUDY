@@ -1,3 +1,48 @@
+# 2019-05-05
+
+## Drone
+
+- 20190410 Drone Data Train Model로 Drone Video 시험
+  > 결과가 만족할 만한 수준은 아님. 작은 크기는 여전히 검출을 못함
+  > 0408 데이터를 추가하여 학습 하기로 함
+- 20190408 Drone Data Annotation 작업하여 20190410 Data Annotation과 병합
+- aerial_pedestrian_detection를 이용하여 20190408_10 Drone Data Training
+
+## LPWA
+
+- 발표자료 검토 및 수정
+
+## etc
+
+---
+
+# 2019-05-05
+
+## Drone
+
+- 20190410 Drone Data Annotation 작업
+- aerial_pedestrian_detection를 이용하여 20190410 Drone Data Training
+
+## etc
+
+---
+
+# 2019-05-03
+
+## Drone
+
+- 프로토콜 검토 회의
+
+## LPWA
+
+- 발표자료 검토 회의
+
+## etc
+
+-
+
+---
+
 # 2019-05-02
 
 ## Drone
@@ -6,11 +51,13 @@
 
   > [코드](https://github.com/priya-dwivedi/aerial_pedestrian_detection) 분석
 
+- 주/야간 영상 센서 시험/데모
+
 ## etc
 
 - [x] aerial_pedestrian_detection 모델 1차 학습 결과 분석
   > > Epoch 50을 마친후, Eval 툴을 사용하여 성능 분석해보니, 성능이 알려진 내용보다 안 좋음. 또한, Eval시 오류 메시지 출력 (To-Do Issue: Debug 할것)
-- [x] `ImgLabel` Annotation Tool 설치 (MacOS에 설치시 오류 발생했으나 해결)
+- [x] `labelImg` Annotation Tool 설치 (MacOS에 설치시 오류 발생했으나 해결)
 - [ ] Layer Output Visualization (ToDo: Check out the layer output of consecutive frames)
 
 ---
