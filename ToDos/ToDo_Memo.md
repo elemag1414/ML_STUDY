@@ -2,15 +2,15 @@
 
 ## Drone
 
-- 20190410 Drone Data Train Model로 Drone Video 시험
+- [x] 20190410 Drone Data Train Model로 Drone Video 시험
   > 결과가 만족할 만한 수준은 아님. 작은 크기는 여전히 검출을 못함
-  > 0408 데이터를 추가하여 학습 하기로 함
-- 20190408 Drone Data Annotation 작업하여 20190410 Data Annotation과 병합
-- aerial_pedestrian_detection를 이용하여 20190408_10 Drone Data Training
+  > 20190408 데이터를 추가하여 학습 하기로 함
+- [x] 20190408 Drone Data Annotation 작업하여 20190410 Data Annotation과 병합
+- [x] aerial_pedestrian_detection를 이용하여 20190408_10 Drone Data Training
 
 ## LPWA
 
-- 발표자료 검토 및 수정
+- [x] 발표자료 검토 및 수정
 
 ## etc
 
