@@ -1,3 +1,48 @@
+# 2019-05-08
+
+## Drone
+
+- [x] aerial_pedestrian_detection를 이용하여 201904_02_05_08_10 Drone Data Training 계속
+
+- [ ] Yolo v3과 성능 비교를 위한 모델 준비
+
+  > 코드 clone 및 수정
+  > Yolo v3 학습을 위한 데이터세트 준비 작업
+
+- [ ] Small Object 검출을 위한 Background Study
+
+  > "Unsupervised learning from Video to detect foreground objects in single images"
+  >
+  > > Paper: [ICCV 2017 paper](http://openaccess.thecvf.com/content_ICCV_2017/papers/Croitoru_Unsupervised_Learning_From_ICCV_2017_paper.pdf)
+  > > Code: [GitHub](https://github.com/ioanacroi/unsup-learning-from-video/)
+
+  > "Unsupervised object segmentation in video by efficient selection of highly probable positive features"
+  >
+  > > Paper: [ICCV 2017 paper](https://arxiv.org/pdf/1704.05674.pdf)
+  > > Code: [MATLAB Version](https://drive.google.com/drive/folders/0BxYHPeDp3MzoRHpyOGhFRGxyLWM)
+  > > Web: [Paper Web](https://sites.google.com/view/unsupervisedobjectsegmentation/home)
+
+## LPWA
+
+- [x] 발표자료 검토 회의
+
+## etc
+
+---
+
+# 2019-05-07
+
+## Drone
+
+- [x] 20190402, 20190405 DataSet Annotation 작업하여 기존 201904_08_10 DataSet에 병합 (201904_02_05_08_10 Dataset 생성)
+- [x] aerial_pedestrian_detection를 이용하여 201904_02_05_08_10 Drone Data Training
+  > Batch Step Size를 1000으로 한 경우, mAP가 201904_08_10 DataSet으로 Training시와 비교하여 낮게 학습되어, 2000으로 변경하여 학습 진행
+  > ToDo: 학습시 GPU 모니터해보니 생각보다 많은 시간이 idle로 보임. 학습 시간 단축을 위한 분석 필요
+
+## etc
+
+---
+
 # 2019-05-06
 
 ## Drone
