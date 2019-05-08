@@ -1,3 +1,17 @@
+# 2019-05-09
+
+## Drone
+
+- [ ] diff filter: ObjectDetection/ObjectTracking/re3/demo/detection_test.py
+
+## LPWA
+
+- [ ] 발표자료 수정
+
+## etc
+
+---
+
 # 2019-05-08
 
 ## Drone
