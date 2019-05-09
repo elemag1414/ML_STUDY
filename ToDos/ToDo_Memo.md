@@ -2,13 +2,27 @@
 
 ## Drone
 
-- [ ] diff filter: ObjectDetection/ObjectTracking/re3/demo/detection_test.py
+- [x] Diff filter 이용 Bg subtraction 구현 및 데이터 시험 테스트
+- [x] 고정 카메라 영상 데이터 촬영 (클립: 8개?). Tracking용 테스트 데이터로 활용 예정
+- [x] 오늘 촬영 데이터로 tracker 시험
+
+  > > 배경 노이즈가 크거나, 어두울 경우 tracking이 잘 안됨.
+  > > 작은 물체에 대해서도 lost 많이 함.
+  > > 기존 시험에서 작은 물체 tracking이 가능했던것은 크기에 비해 확실한 focus와 높은 해상도 때문 인듯...
+
+- [ ] 어제 YOLOv3로 학습 진행한 것이 마지막 단계에서 에러 발생.
+      ToDo: 원인 분석 할것.
 
 ## LPWA
 
 - [ ] 발표자료 수정
 
 ## etc
+
+영상 데이터 사이즈에 비해 모델들의 입력이 작음.
+영상 데이터를 좀더 작게 만들어 Segmenting 한 후 테스트 진행 예정
+
+트랙커도 마찬가지로 Segmenting후 trigger된 window로 성능 분석할 예정 (window는 resize가 필요하지 않을 정도의 viewport 사이즈로 설정할것.)
 
 ---
 
