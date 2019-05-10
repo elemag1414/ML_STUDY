@@ -93,7 +93,6 @@ See [this](tmux.md)
 [Source](https://askubuntu.com/questions/420981/how-do-i-save-terminal-output-to-a-file/420983) <br>
 
 Just redirect the output to a file:
-
 `SomeCommand > SomeFile.txt`
 
 <br>
