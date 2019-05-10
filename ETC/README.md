@@ -6,6 +6,7 @@
 - [GPU monitor하기](#GPU-monitor하기)
 - [file 사이즈 확인하기](#file-사이즈-확인하기)
 - [tmux사용하기](#tmux사용하기)
+- [Redirect Screen log to file](#Redirect-Screen-log-to-file)
 
 ## Ubuntu
 
@@ -82,5 +83,24 @@ $ ls -lah
 ```
 
 ### [tmux사용하기](tmux.md)
+
+### Redirect Screen log to file
+
+[Source](https://askubuntu.com/questions/420981/how-do-i-save-terminal-output-to-a-file/420983)
+Just redirect the output to a file:
+`SomeCommand > SomeFile.txt`
+
+Or if you want to append data:
+`SomeCommand >> SomeFile.txt`
+
+If you want stderr as well use this:
+`SomeCommand &> SomeFile.txt`
+
+or this to append:
+`SomeCommand &>> SomeFile.txt`
+
+if you want to have both stderr and output displayed on the console and in a file use this:
+`SomeCommand 2>&1 | tee SomeFile.txt`
+(If you want the output only, drop the 2 above)
 
 ##### [[ML_STUDY로 돌아기기]](https://github.com/elemag1414/ML_STUDY)
