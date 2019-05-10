@@ -16,4 +16,6 @@
 
 - [Keras가 GPU를 사용하는지 확인하기](keras_gpu.md)
 
+- [Keras 이모저모](keras_omni.md)
+
 ##### [[ML_STUDY로 돌아기기]](https://github.com/elemag1414/ML_STUDY)
