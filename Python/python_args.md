@@ -29,4 +29,7 @@ b(a=1, b=2, c=3)
 
 ```
 
+특히, \*\*kwargs의 경우 class 사용시 넘겨줄 인자를 관리하는데 좀 더 유연하게 사용할 수 있다.
+[[출처]](https://toughbear.tistory.com/entry/python-args%EC%99%80-kwargs-%EC%9D%98%EB%AF%B8%EC%99%80-%EC%82%AC%EC%9A%A9)의 예제에 잘 정리되어 있다.
+
 ##### [[Python 돌아가기]](README.md) | [[ML_STUDY로 돌아기기]](https://github.com/elemag1414/ML_STUDY)
