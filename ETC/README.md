@@ -82,9 +82,11 @@ Tue Apr 30 12:33:04 2019
 $ ls -lah
 ```
 
-### [tmux사용하기]
+### tmux사용하기
 
 See [this](tmux.md)
+
+<br>
 
 ### Redirect Screen log to file
 
