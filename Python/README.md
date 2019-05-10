@@ -14,5 +14,6 @@
   > pip install tdqm
 - [csv 다루기](python_csv.md)
 - [xml 다루기](python_xml.md)
+- [\*args와 \*\*kwargs](python_args.md)
 
 ##### [[ML_STUDY로 돌아기기]](https://github.com/elemag1414/ML_STUDY)
