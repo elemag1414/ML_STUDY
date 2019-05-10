@@ -95,7 +95,7 @@ See [this](tmux.md)
 Just redirect the output to a file:
 
 ```bash
-SomeCommand \> SomeFile.txt
+SomeCommand > SomeFile.txt
 ```
 
 Or if you want to append data:
