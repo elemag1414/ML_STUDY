@@ -86,18 +86,27 @@ $ ls -lah
 
 ### Redirect Screen log to file
 
-[Source](https://askubuntu.com/questions/420981/how-do-i-save-terminal-output-to-a-file/420983)
+[Source](https://askubuntu.com/questions/420981/how-do-i-save-terminal-output-to-a-file/420983) <br>
+
 Just redirect the output to a file:
 `SomeCommand > SomeFile.txt`
+
+<br>
 
 Or if you want to append data:
 `SomeCommand >> SomeFile.txt`
 
+<br>
+
 If you want stderr as well use this:
 `SomeCommand &> SomeFile.txt`
 
+<br>
+
 or this to append:
 `SomeCommand &>> SomeFile.txt`
+
+<br>
 
 if you want to have both stderr and output displayed on the console and in a file use this:
 `SomeCommand 2>&1 | tee SomeFile.txt`
