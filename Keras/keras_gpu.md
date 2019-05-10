@@ -97,5 +97,6 @@ K.tensorflow_backend._get_available_gpus()
 
 - [Keras, Tensorflow에서 GPU 똑똑하게 사용하기 1부](https://datamasters.co.kr/33)
 - [Keras, Tensorflow에서 GPU 똑똑하게 사용하기 2부](https://datamasters.co.kr/48)
+- [GPU 사용 자원 제약하기](https://stackoverflow.com/questions/45662253/can-i-run-keras-model-on-gpu)
 
 ##### [[Keras로 돌아가기]](README.md) | [[Tensorflow로 돌아가기]](../Tensorflow/README.md) | [[ML_STUDY로 돌아기기]](https://github.com/elemag1414/ML_STUDY)
