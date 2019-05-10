@@ -91,4 +91,11 @@ K.tensorflow_backend._get_available_gpus()
 ['/gpu:0']
 ```
 
+## ETC
+
+### Keras, TF에서 효율적인 GPU 사용 방법
+
+- [Keras, Tensorflow에서 GPU 똑똑하게 사용하기 1부](https://datamasters.co.kr/33)
+- [Keras, Tensorflow에서 GPU 똑똑하게 사용하기 2부](https://datamasters.co.kr/48)
+
 ##### [[Keras로 돌아가기]](README.md) | [[Tensorflow로 돌아가기]](../Tensorflow/README.md) | [[ML_STUDY로 돌아기기]](https://github.com/elemag1414/ML_STUDY)
