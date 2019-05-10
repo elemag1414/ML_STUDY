@@ -4,6 +4,7 @@
 - [Ubuntu 사용자 추가하기](#사용자-추가하기)
 - [SCP로 파일 전송하기](#scp-file-전송)
 - [GPU monitor하기](#GPU-monitor하기)
+- [CPU 사용률 확인하기](#CPU-사용률-확인하기)
 - [file 사이즈 확인하기](#file-사이즈-확인하기)
 - [tmux사용하기](#tmux사용하기)
 - [Redirect Screen log to file](#Redirect-Screen-log-to-file)
@@ -74,6 +75,8 @@ Tue Apr 30 12:33:04 2019
 +-----------------------------------------------------------------------------+
 ```
 
+주의: 테이블의 GPU 사용량은 일정 시간동안의 사용량을 나타내므로, 해당 값만으로 사용률을 가늠하기에는 무리가 있다.
+
 ### file 사이즈 확인하기
 
 > h 옵션 사용
@@ -123,5 +126,13 @@ SomeCommand 2>&1 | tee SomeFile.txt
 ```
 
 (If you want the output only, drop the 2 above)
+
+### CPU 사용률 확인하기
+
+Linux환경에서 CPU 사용 현황을 확인하기 위한 명령어로 `top`을 사용한다.
+
+이는 실시간으로 CPU 사용률을 보여주는 도구이다.
+
+`top`이 보여주는 각 항목과 명령어들에 대해서는 [[여기]](https://ironmask.net/355)를 참조한다.
 
 ##### [[ML_STUDY로 돌아기기]](https://github.com/elemag1414/ML_STUDY)
