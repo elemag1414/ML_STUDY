@@ -14,18 +14,18 @@
 
 ```python
 def a(*args):
-    print args
+    print(args)
 
 
-a(1,2,3,4,)
+a(1,2,3,4)
 ==> (1,2,3,4)
 
 
 def b(**kwargs):
-    print kwargs
+    print(kwargs)
 
 b(a=1, b=2, c=3)
-==>{ a:1, b:2, c:3}
+==>{'a': 1, 'b': 2, 'c': 3}
 
 ```
 
