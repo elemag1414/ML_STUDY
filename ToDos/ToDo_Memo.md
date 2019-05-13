@@ -16,10 +16,9 @@
 
 1. 사용 모델 : YOLO v3, RetinaNet
 2. DataSet: D201904_02_05_08_10
-3. 시험 내용:
-   3.1 최초 비교 시험: Default Anchor로 학습하여 두 모델을 시험 비디오에 적용함.
-   3.2 Dataset ground truth로 부터 bbox 정보를 추출 분석하여 Anchor를 다시 계산함. (k-cluster 사용)
-   3.3
+3. 시험 내용: <br>
+   3.1 최초 비교 시험: Default Anchor로 학습하여 두 모델을 시험 비디오에 적용함. <br>
+   3.2 Dataset ground truth로 부터 bbox 정보를 추출 분석하여 Anchor를 다시 계산함. (k-cluster 사용) <br>
 4. 결과: 예상외로, RetinaNet의 성능이 YOLOv3보다 떨어짐
 
 ## LPWA
