@@ -5,9 +5,9 @@
 - ML 시험 (0509~5513)
 
   > Worker 수 증가하여 CPU -> GPU memory 속도 증가 (Multi Processing: True)
-
+  >
   > Keras의 경우, Multi-GPU 설정을 Multi Processing 과 함께 설정하면 버그가 발생함.
-
+  >
   > > 현재는 싱글 GPU와 Multi Processing을 설정하여 작업중 (기존보다 빨라지지만, GPU duty는 높지 않은듯...)
 
 <br>
