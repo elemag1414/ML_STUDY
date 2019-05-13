@@ -19,15 +19,22 @@
 3. 시험 내용: <br>
    3.1 최초 비교 시험: Default Anchor로 학습하여 두 모델을 시험 비디오에 적용함. <br>
    3.2 Dataset ground truth로 부터 bbox 정보를 추출 분석하여 Anchor를 다시 계산함. (k-cluster 사용) <br>
-4. 결과: 예상외로, RetinaNet의 성능이 YOLOv3보다 떨어짐
+4. 결과: 예상외로, RetinaNet의 성능이 YOLOv3보다 떨어짐 <br>
+
+<br>
+
+< ToDo >
+
+1. RetinaNet Training 검토 할것
+2. RetinaNet Training시 Epoch마다 Random Shuffling하는지 확인 할 것
 
 ## LPWA
 
-- [ ] 발표자료 검토 회의 (10:30 @509)
+- [x] 발표자료 검토 회의 (10:30 @509)
 
 ## etc
 
-- [ ] 특허 검색식 검토 회의 (2:00 @713)
+- [x] 특허 검색식 검토 회의 (2:00 @713)
 
 ---
 
