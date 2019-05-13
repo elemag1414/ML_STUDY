@@ -22,7 +22,7 @@
 
 > > 도형 그릴때 thickness를-1로 주면 내부가 채워진 도형이 된다.
 
-####Color Constants
+#### Color Constants
 
 ```python
 red = (0,0,255)
