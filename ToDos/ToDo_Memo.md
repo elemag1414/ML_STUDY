@@ -19,7 +19,11 @@
 3. 시험 내용: <br>
    3.1 최초 비교 시험: Default Anchor로 학습하여 두 모델을 시험 비디오에 적용함. <br>
    3.2 Dataset ground truth로 부터 bbox 정보를 추출 분석하여 Anchor를 다시 계산함. (k-cluster 사용) <br>
-4. 결과: 예상외로, RetinaNet의 성능이 YOLOv3보다 떨어짐 <br>
+   3.3 YOLO v3: Default (416, 416) 사이즈에서 (1120, 1120) HR 사이즈로 변경하여 학습 진행 <br>
+   3.4 YOLO v3: HR 학습 후, 테스트 비디오로 성능 분석 <br>
+4. 결과:
+   4.1 예상외로, RetinaNet의 성능이 YOLOv3보다 떨어짐 <br>
+   4.2 YOLO v3: HR 학습 모델로 테스트 비디오 시험 결과, detection률 향상 특히 종전 detect 되지 않던 작은 사이즈도 검출됨. 하지만, back ground 노이즈가 많은 경우 작은 물체를 drone으로 false detect률도 덩달아 높아짐.
 
 <br>
 
