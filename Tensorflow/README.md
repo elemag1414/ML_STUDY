@@ -118,4 +118,22 @@ session = tf.Session(config=config)
 
 **주의할 점은, 이 옵션은 메모리 증식만 가능하다는 것**이다. 연산이 끝나고 메모리가 필요없는 상황이 되도 할당된 메모리를 반납하지 않게 되므로, tf는 이 경우 더 심한 메모리 파편화가 발생할 수 있다.
 
+사실, gpu가 하나이더라도 `allow_growth` 옵션으로 다수의 프로세스를 진행 할 수 있다. 하지만, 이 경우, 처음 시작하는 프로세스가 나중에 보면 점점 메모리를 차지하다가 대부분의 메모리를 점유하게 되는 것을 볼 수 있다.
+
+> > `per_process_gpu_memory_fraction`
+
+만약 작업 전에 프로세스가 대략적으로 얼마의 메모리를 사용할 지 알 경우, gpu의 메모리 할당 비율을 미리 지정하는 옵션이다.
+
+다음의 가용 메모리의 40%를 할당하는 예이다.
+
+```python
+
+import tensorflow as tf
+
+config = tf.ConfigProto()
+config.gpu_options.per_process_gpu_memory_fraction = 0.4
+session = tf.Session(config=config)
+
+```
+
 ##### [[ML_STUDY로 돌아기기]](https://github.com/elemag1414/ML_STUDY)
