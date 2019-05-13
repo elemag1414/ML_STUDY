@@ -1,3 +1,37 @@
+# 2019-05-13
+
+## Drone
+
+- ML 시험 (0509~5513)
+
+  > Worker 수 증가하여 CPU -> GPU memory 속도 증가 (Multi Processing: True)
+
+  > Keras의 경우, Multi-GPU 설정을 Multi Processing 과 함께 설정하면 버그가 발생함.
+
+  > > 현재는 싱글 GPU와 Multi Processing을 설정하여 작업중 (기존보다 빨라지지만, GPU duty는 높지 않은듯...)
+
+<br>
+
+< 시험 설정 >
+
+1. 사용 모델 : YOLO v3, RetinaNet
+2. DataSet: D201904_02_05_08_10
+3. 시험 내용:
+   3.1 최초 비교 시험: Default Anchor로 학습하여 두 모델을 시험 비디오에 적용함.
+   3.2 Dataset ground truth로 부터 bbox 정보를 추출 분석하여 Anchor를 다시 계산함. (k-cluster 사용)
+   3.3
+4. 결과: 예상외로, RetinaNet의 성능이 YOLOv3보다 떨어짐
+
+## LPWA
+
+- [ ] 발표자료 검토 회의 (10:30 @509)
+
+## etc
+
+- [ ] 특허 검색식 검토 회의 (2:00 @713)
+
+---
+
 # 2019-05-09
 
 ## Drone
