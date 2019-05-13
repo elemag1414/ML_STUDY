@@ -18,11 +18,11 @@
 
 ---
 
-- [OpenCV 도형 그리기](https://opencv-python.readthedocs.io/en/latest/doc/03.drawShape/drawShape.html)
+#### [OpenCV 도형 그리기](https://opencv-python.readthedocs.io/en/latest/doc/03.drawShape/drawShape.html)
 
-  > > 도형 그릴때 thickness를-1로 주면 내부가 채워진 도형이 된다.
+> > 도형 그릴때 thickness를-1로 주면 내부가 채워진 도형이 된다.
 
-- Color Constants
+####Color Constants
 
 ```python
 red = (0,0,255)
@@ -34,7 +34,7 @@ cyan = (255, 255, 0)
 magenta = (255, 0, 255)
 ```
 
-- Image Read
+#### Image Read
 
 ```python
 import cv2
@@ -64,7 +64,7 @@ cv2.destroyAllWindows()
 
 <br>
 
-- Video Control
+#### Video Control
 
 ```python
 import cv2
@@ -176,7 +176,7 @@ cv2.destroyAllWindows()
 
 <br>
 
-- Webcam Control
+#### Webcam Control
 
 ```python
 import cv2
