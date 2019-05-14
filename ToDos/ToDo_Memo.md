@@ -11,9 +11,9 @@
 
 ## etc
 
-[x] RetinaNet Anchor Computation
-[x] Correct Step size for RetinaNet Training
-[ ] Training RetinaNet with corrected Step size and Small Anchor Box definition
+[x] RetinaNet Anchor Computation <br>
+[x] Correct Step size for RetinaNet Training <br>
+[ ] Training RetinaNet with corrected Step size and Small Anchor Box definition <br>
 
 ---
 
