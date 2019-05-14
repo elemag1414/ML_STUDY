@@ -6,7 +6,7 @@
 
   > 비교 시험 항목 (Yolo v3):
   >
-  > > TR : HR vs LR
+  > > TR : HR vs LR <br>
   > > Input Video (VR): HR vs LR
 
 ## etc
