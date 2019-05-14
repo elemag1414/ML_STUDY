@@ -1,3 +1,22 @@
+# 2019-05-14
+
+## Drone
+
+- ML 시험
+
+  > 비교 시험 항목 (Yolo v3):
+  >
+  > > TR : HR vs LR
+  > > Input Video (VR): HR vs LR
+
+## etc
+
+[x] RetinaNet Anchor Computation
+[x] Correct Step size for RetinaNet Training
+[ ] Training RetinaNet with corrected Step size and Small Anchor Box definition
+
+---
+
 # 2019-05-13
 
 ## Drone
