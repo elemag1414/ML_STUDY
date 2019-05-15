@@ -7,7 +7,8 @@
 ## VSCode
 
 - [서버의 VSCode와 연동하기](remote_ssh.md)
-  > YouTube: [https://www.youtube.com/watch?v=bl4tivz7kpo&t=3s]
+  > [Remote FS을 이용한 연동방법](https://www.youtube.com/watch?v=bl4tivz7kpo&t=3s)을 사용하긴 했으나, 자동 코드완성이 안되는 등 좀 문제가 있었다.
+  > 이러한 문제를 해결하기 위해 [Remote SSH를 이용한 방법](https://www.youtube.com/watch?v=lKXMyln_5q4)을 설명한다.
 
 ## 서버의 Tensorboard log를 local에서 보기
 
