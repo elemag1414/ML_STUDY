@@ -19,24 +19,24 @@ VSCode Insiders를 설치해야 한다고 한다.
     - Key generation
 
     ```bash
-    \$ ssh-keygen -t rsa -b 4096 -f /Users/my_account/.ssh/ubuntu_rsa
+    $ ssh-keygen -t rsa -b 4096 -f /Users/my_account/.ssh/ubuntu_rsa
     ```
 
     Note,
     `/User/my_account` is my local user directory on MBP
     (Create `.ssh`, if it’s not on the system)
     `ubuntu_rsa` is the name of key creating now.
-    Once you enter the above, computer asks passphrases. You may either just enter or some word you like.
+    Once you enter the above, computer asks `passphrases`. You may either just enter or some word you like.
 
-    Then…
-    Check if the key is generated.
-    Go to `/Users/my_account/.ssh/.` Then, you should see files, `ubuntu_rsa` and `ubuntu_rsa.pub`.
+    Then… <br>
+    Check if the key is generated. <br>
+    Go to `/Users/my_account/.ssh/.` Then, you should see files, `ubuntu_rsa` and `ubuntu_rsa.pub`. <br>
     Note, `ubuntu_rsa.pub` is the public key that should be stored in remote server
 
 2.  Copy the public RSA key to the remote server.
 
 
-    The file  `ubuntu_rsa.pub` is the public key just generated. This guy needs to be copied on the server.
+    The file  `ubuntu_rsa.pub` is the public key just generated. This guy needs to be copied on the server. <br>
     So scp it to server like:
     ```bash
     $ scp /Users/my_account/.ssh/ubuntu_rsa.pub my_id@server_ip:~/key.pub
@@ -47,7 +47,7 @@ VSCode Insiders를 설치해야 한다고 한다.
     Now, on server, the public key should be located in `.ssh` folder.
     So, move it to the right directory.
     ```bash
-    server$ cat \~/key.pub \>\> \~/.ssh/authorized_keys
+    server$ cat ~/key.pub >> ~/.ssh/authorized_keys
     ```
 
     You may wondering why the public key is not transferred directly to `.ssh` folder on server side.
@@ -57,25 +57,26 @@ VSCode Insiders를 설치해야 한다고 한다.
     Once the public key is copied on the right place on the server.
     You may want to change the privilege of the file for safety reason:
     ```bash
-    server$ chmod 600 \~/.ssh/authorized_keys
+    server$ chmod 600 ~/.ssh/authorized_keys
     ```
 
-    Then remove the key.pub file on the home directory which was transferred from MBP.
+    Then remove the `key.pub` file on the home directory which was transferred from MBP.
     ```bash
     server$ rm key.pub
     ```
 
 
-    <Sanity Check>
-    You may want to check if the key works fine for ssh connection.
-    By typing the following, see if the remote asks password for ssh connection.
+    *Sanity Check*
+    You may want to check if the key works fine for ssh connection. <br>
+    Typing the following, and see if the remote asks password for ssh connection.
+
     ```bash
     $ ssh -i /User/my_account/.ssh/ubuntu_rsa my_id@server_ip
     ```
 
     If the remote doesn’t ask the password for ssh connection and allow you to connect, you’re successful.
 
-4.  Configure Remote SSH in VSCODE insider
+4.  Configure Remote SSH in VSCODE insider <br>
     Launch VSCODE insider and bring the command pallet.
     Search command `Remote SSH: Open Configure File…`
     Then, select the configuration option like: `/User/user/.ssh/config`
