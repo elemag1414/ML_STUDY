@@ -66,7 +66,7 @@ VSCode Insiders를 설치해야 한다고 한다.
     ```
 
 
-    *Sanity Check*
+    *Sanity Check* <br>
     You may want to check if the key works fine for ssh connection. <br>
     Typing the following, and see if the remote asks password for ssh connection.
 
@@ -76,10 +76,10 @@ VSCode Insiders를 설치해야 한다고 한다.
 
     If the remote doesn’t ask the password for ssh connection and allow you to connect, you’re successful.
 
-4.  Configure Remote SSH in VSCODE insider <br>
-    Launch VSCODE insider and bring the command pallet.
-    Search command `Remote SSH: Open Configure File…`
-    Then, select the configuration option like: `/User/user/.ssh/config`
+3.  Configure Remote SSH in VSCODE insider <br>
+    Launch VSCODE insider and bring the command pallet. <br>
+    Search command `Remote SSH: Open Configure File…` <br>
+    Then, select the configuration option like: `/User/user/.ssh/config` <br>
     (If you don’t the the configuration option, just create empty file config on `/User/user/.ssh/`)
 
     Then, set the configuration, at least, like the minimum settings as following:
@@ -92,15 +92,15 @@ VSCode Insiders를 설치해야 한다고 한다.
     ```
 
 
-    Save the config above, and open command pallet again.
-    And search
-    `Remote SSH: Connect to Host…`
+    Save the config above, and open command pallet again. <br>
+    And search <br>
+    `Remote SSH: Connect to Host…` <br>
     Then, pick the server connection config that you just setup (e.g. `name_of_config_U_want_to_call`)
 
     This will bring you to new vscode insider window connected to the Remote Server.
 
     Now, you can access the remote files and folders just as like the ones in the local MBP.
-    Also, all code completion and code navigation shall work.
+    Also, all code completion and code navigation shall work. <br>
         (Remote Debugging features are said to be working. But I didn’t test it.)
 
 ##### [[Remote 서버를 통한 개발]](Dev_On_Remote.md) | [[ML_STUDY로 돌아기기]](https://github.com/elemag1414/ML_STUDY)
