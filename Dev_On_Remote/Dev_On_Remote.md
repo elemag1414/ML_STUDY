@@ -6,7 +6,8 @@
 
 ## VSCode
 
-- [서버의 VSCode와 연동하기](https://www.youtube.com/watch?v=bl4tivz7kpo&t=3s)
+- [서버의 VSCode와 연동하기](remote_ssh.md)
+  > YouTube: [https://www.youtube.com/watch?v=bl4tivz7kpo&t=3s]
 
 ## 서버의 Tensorboard log를 local에서 보기
 
