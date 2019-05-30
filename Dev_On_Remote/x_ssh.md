@@ -30,6 +30,12 @@ access control disabled, clients can connect from any host
 $ ssh -X sever_account@xxx.xxx.xxx.xxx
 ```
 
+** 수정 **
+-Y 옵션을 사용하면, 간혹 발생하는 timeout문제를 해결할 수 있다.
+```bash
+$ ssh -Y sever_account@xxx.xxx.xxx.xxx
+```
+
 > > 만약 위의 설정 후에도 graphic contents 창이 열리지 않는 display error가 발생하면,
 > > `DISPLAY` 환경 변수를 설정해 준다.
 
