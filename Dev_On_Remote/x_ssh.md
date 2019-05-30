@@ -27,10 +27,10 @@ access control disabled, clients can connect from any host
 - x 를 통한 ssh 연결
 
 ```bash
---$ ssh -X sever_account@xxx.xxx.xxx.xxx--
+$ ssh -X sever_account@xxx.xxx.xxx.xxx--
 ```
 
-**수정**
+**수정** <br>
 -X옵션대신에 -Y 옵션을 사용하면, 간혹 발생하는 timeout문제를 해결할 수 있다.
 ```bash
 $ ssh -Y sever_account@xxx.xxx.xxx.xxx
