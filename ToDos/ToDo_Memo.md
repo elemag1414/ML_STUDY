@@ -25,8 +25,7 @@
 ---
 
 Test
-
-$\lim_{x \to \infty} \exp(-x) = 0$
+x^2^
 
 ---
 
