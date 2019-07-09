@@ -1,3 +1,33 @@
+# 2019-07-09
+
+## Drone
+
+- Drone Detection & Tracking Model Study
+
+  Code 분석
+
+  > RE^3
+  >
+  > > Network Architecture
+
+  > Inference
+
+  > Training
+
+* ML 시험
+
+  >
+
+## etc
+
+- [ ] Consideration for combining Tracking like RE^3 with Detection like YOLOv3 <br>
+
+---
+
+과제 제안서 준비 및 기타 업무로 Pending...
+
+---
+
 # 2019-05-14
 
 ## Drone
