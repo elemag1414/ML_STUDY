@@ -6,7 +6,7 @@
 
   Code 분석
 
-  > RE^(3)^
+  > RE3
   >
   > > Network Architecture
 
@@ -20,7 +20,7 @@
 
 ## etc
 
-- [ ] Consideration for combining Tracking like RE^3^ with Detection like YOLOv3 <br>
+- [ ] Consideration for combining Tracking like RE3 with Detection like YOLOv3 <br>
 
 ---
 
