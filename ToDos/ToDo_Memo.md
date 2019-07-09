@@ -6,7 +6,7 @@
 
   Code 분석
 
-  > RE^3^
+  > RE^(3)^
   >
   > > Network Architecture
 
