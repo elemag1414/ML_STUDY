@@ -27,6 +27,8 @@
 Test
 x^2^
 
+Superscript test
+
 ---
 
 과제 제안서 준비 및 기타 업무로 Pending...
