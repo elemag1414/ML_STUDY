@@ -18,9 +18,11 @@
 
   >
 
-## etc
+## MISC TIPS:
 
-> Check tf.print('message goes here...:', tensor, [tensor])
+- [ ] Check tf.print('message goes here...:', tensor, [tensor])
+
+## etc
 
 - [ ] Consideration for combining Tracking like RE3 with Detection like YOLOv3 : check [ROLO](https://github.com/Guanghan/ROLO) <br>
 
