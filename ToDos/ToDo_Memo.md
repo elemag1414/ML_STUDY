@@ -20,14 +20,35 @@
 
 ## etc
 
-- [ ] Consideration for combining Tracking like RE3 with Detection like YOLOv3 <br>
+> Check tf.print('message goes here...:', tensor, [tensor])
+
+- [ ] Consideration for combining Tracking like RE3 with Detection like YOLOv3 : check [ROLO](https://github.com/Guanghan/ROLO) <br>
 
 ---
 
-Test
-x^2^
+# 2019-07-09
 
-Superscript test
+## Drone
+
+- Drone Detection & Tracking Model Study
+
+  Code 분석
+
+  > RE3
+  >
+  > > Network Architecture
+
+  > Inference
+
+  > Training
+
+* ML 시험
+
+  >
+
+## etc
+
+- [ ] Consideration for combining Tracking like RE3 with Detection like YOLOv3 <br>
 
 ---
 
