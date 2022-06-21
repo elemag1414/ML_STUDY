@@ -4,7 +4,7 @@
 
 ## HyperParameter Optimization (HPO) 
 
-- Update on June 21, 2002
+###### Update on June 21, 2002
 
 * [HPO using keras-tuner](hpo/keras_tuner.md)
 * Distributed HPO: Ray vs DASH / Keras 
