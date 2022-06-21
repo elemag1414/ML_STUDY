@@ -2,13 +2,23 @@
 
 ---
 
+## HyperParameter Optimization (HPO) 
+
+- Update on June 21, 2002
+
+* [HPO using keras-tuner](hpo/keras_tuner.md)
+* Distributed HPO: Ray vs DASH / Keras 
+* HPO using Sklearn kit
+
+---
+
 ## ML Models
 
 ### [Resnet](ML_Models/ResNet.md)
 
 ---
 
-## ML Implementation
+## ML Implementation Tips
 
 ### [Tensorflow](https://github.com/elemag1414/ML_STUDY/blob/master/Tensorflow/README.md)
 
